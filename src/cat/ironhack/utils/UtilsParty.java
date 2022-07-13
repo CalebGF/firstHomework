@@ -14,65 +14,46 @@ import java.util.Scanner;
 
 public class UtilsParty {
 
-    public ArrayList<Party> generatePartiesFromCSV(String csvfile) throws IOException {
+    public static Party generatePartyFromCSV(String csvfile) throws IOException {
         ArrayList<Character> characters = new ArrayList<Character>();
-        ArrayList<Party> parties = new ArrayList<Party>();
-        Scanner sc= new Scanner(System.in);
-        System.out.print("Enter your csv file name");
-        String csvFileName= sc.next();
-        parties.add(createPartyFromcsv(characters, csvFileName));
-        characters.clear();
-        System.out.print("Please enter the second csv file name");
-        String csvFileName2= sc.next();
-        parties.add(createPartyFromcsv(characters, csvFileName2));
-        return parties;
-    }
-
-    private Party createPartyFromcsv(ArrayList<Character> characters, String csvfile) throws IOException {
-        File file = new File("oscar_age_female.csv");
+        File file = new File(csvfile);
         Scanner scannedFile = new Scanner(file);
-        Path path = Paths.get("oscar_age_female.csv");
+        Path path = Paths.get(csvfile);
         String[] csvContent;
         String currentLine;
 
-        for (int i = 0; i < Files.lines(path).count(); i++) {
+        for (int i = 0; i < Files.lines(path).count()-1; i++) {
             currentLine = scannedFile.nextLine();
             if (i > 0) {
-                csvContent = currentLine.split(", ");
-
-                if (csvContent[6].replaceAll("^\"|\"$", "") == "wizard") {
+                csvContent = currentLine.split(","); //divides the current line i an Array of strings
+                String type = csvContent[0].replaceAll("\"", ""); //gets the character type value
+                String wizard = "wizard";
+                String warrior = "warrior";
+                if (type.equals(wizard)) { //filters the Character type value to call apropriate constructor and add it to array
                     characters.add(createWizard(csvContent));
-                } else {
+                } else if(type.equals(warrior)){
                     characters.add(createWarrior(csvContent));
+                }else{
+                    throw new Error("There is one or many character type not valid in your csv file.");
                 }
             }
         }
         return new Party(characters);
     }
-    private Character createWizard(String[] csvContent){
-        String name;
-        int hp;
-        boolean isAlive;
-        int staminaMana;
-        int strengthIntelligence;
-        name = csvContent[1].replaceAll("^\"|\"$", "");
-        hp = Integer.valueOf(csvContent[2].replaceAll("^\"|\"$", ""));
-        isAlive = (1 == Integer.valueOf(csvContent[3].replaceAll("^\"|\"$", "")));
-        staminaMana = Integer.valueOf(csvContent[4].replaceAll("^\"|\"$", ""));
-        strengthIntelligence = Integer.valueOf(csvContent[5].replaceAll("^\"|\"$", ""));
-        return new Wizard(name, hp, isAlive, staminaMana, strengthIntelligence);
+    private static Character createWizard(String[] csvContent){
+        String name = csvContent[1].replaceAll("\"","");
+        int hp = Integer.valueOf(csvContent[2].replaceAll("\"",""));
+        boolean isAlive = (1 == Integer.valueOf(csvContent[3].replaceAll("\"","")));
+        int Mana = Integer.valueOf(csvContent[4].replaceAll("\"",""));
+        int Intelligence = Integer.valueOf(csvContent[5].replaceAll("\"",""));
+        return new Wizard(name, hp, isAlive, Mana, Intelligence);
     }
-    private Character createWarrior(String[] csvContent){
-        String name;
-        int hp;
-        boolean isAlive;
-        int staminaMana;
-        int strengthIntelligence;
-        name = csvContent[1].replaceAll("^\"|\"$", "");
-        hp = Integer.valueOf(csvContent[2].replaceAll("^\"|\"$", ""));
-        isAlive = (1 == Integer.valueOf(csvContent[3].replaceAll("^\"|\"$", "")));
-        staminaMana = Integer.valueOf(csvContent[4].replaceAll("^\"|\"$", ""));
-        strengthIntelligence = Integer.valueOf(csvContent[5].replaceAll("^\"|\"$", ""));
-        return new Warrior(name, hp, isAlive, staminaMana, strengthIntelligence);
+    private static Character createWarrior(String[] csvContent){
+        String name = csvContent[1].replaceAll("\"","");
+        int hp = Integer.valueOf(csvContent[2].replaceAll("\"",""));
+        boolean isAlive = (1 == Integer.valueOf(csvContent[3].replaceAll("\"","")));
+        int stamina = Integer.valueOf(csvContent[4].replaceAll("\"",""));
+        int strength = Integer.valueOf(csvContent[5].replaceAll("\"",""));
+        return new Warrior(name, hp, isAlive, stamina, strength);
     }
 }
