@@ -2,15 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="07a5692c-2885-4453-a4d0-606a6394527b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/firstHomework.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/description.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/project-template.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cat/ironhack/character/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cat/ironhack/character/Character.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/homework1.uml" beforeDir="false" afterPath="$PROJECT_DIR$/homework1.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cat/ironhack/party/Party.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cat/ironhack/party/Party.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cat/ironhack/utils/UtilsParty.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cat/ironhack/utils/UtilsParty.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,5 +52,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
