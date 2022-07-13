@@ -42,18 +42,18 @@ public class UtilsParty {
     }
     private static Character createWizard(String[] csvContent){
         String name = csvContent[1].replaceAll("\"","");
-        int hp = Integer.valueOf(csvContent[2].replaceAll("\"",""));
-        boolean isAlive = (1 == Integer.valueOf(csvContent[3].replaceAll("\"","")));
-        int Mana = Integer.valueOf(csvContent[4].replaceAll("\"",""));
-        int Intelligence = Integer.valueOf(csvContent[5].replaceAll("\"",""));
+        int hp = Integer.parseInt(csvContent[2].replaceAll("\"",""));
+        boolean isAlive = (1 == Integer.parseInt(csvContent[3].replaceAll("\"","")));
+        int Mana = Integer.parseInt(csvContent[4].replaceAll("\"",""));
+        int Intelligence = Integer.parseInt(csvContent[5].replaceAll("\"",""));
         return new Wizard(name, hp, isAlive, Mana, Intelligence);
     }
     private static Character createWarrior(String[] csvContent){
         String name = csvContent[1].replaceAll("\"","");
-        int hp = Integer.valueOf(csvContent[2].replaceAll("\"",""));
-        boolean isAlive = (1 == Integer.valueOf(csvContent[3].replaceAll("\"","")));
-        int stamina = Integer.valueOf(csvContent[4].replaceAll("\"",""));
-        int strength = Integer.valueOf(csvContent[5].replaceAll("\"",""));
+        int hp = Integer.parseInt(csvContent[2].replaceAll("\"",""));
+        boolean isAlive = (1 == Integer.parseInt(csvContent[3].replaceAll("\"","")));
+        int stamina = Integer.parseInt(csvContent[4].replaceAll("\"",""));
+        int strength = Integer.parseInt(csvContent[5].replaceAll("\"",""));
         return new Warrior(name, hp, isAlive, stamina, strength);
     }
 }
