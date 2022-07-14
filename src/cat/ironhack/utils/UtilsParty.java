@@ -39,13 +39,19 @@ public class UtilsParty {
         boolean isAlive = (1 == Integer.parseInt(csvContent[3].replaceAll("\"","")));
         int manaStamina = Integer.parseInt(csvContent[4].replaceAll("\"",""));
         int intelligenceStrength = Integer.parseInt(csvContent[5].replaceAll("\"",""));
-        if (csvContent[0].replaceAll("\"", "").equals(wizard)){
-            return new Wizard(name, hp, isAlive, manaStamina, intelligenceStrength);
-        }else if(csvContent[0].replaceAll("\"", "").equals(warrior)){
-            return new Warrior(name, hp, isAlive, manaStamina, intelligenceStrength);
-        }else{
-            throw new Error("There is one or many character type not valid in your csv file.");
+        try{
+            if (csvContent[0].replaceAll("\"", "").equals(wizard)){
+                return new Wizard(name, hp, isAlive, manaStamina, intelligenceStrength);
+            }else if(csvContent[0].replaceAll("\"", "").equals(warrior)){
+                return new Warrior(name, hp, isAlive, manaStamina, intelligenceStrength);
+            }else{
+                throw new Error();
+            }
+        }catch(Exception e) {
+            System.out.println("There is one or many character type not valid in your csv file.");
+        }finally {//aqui podriamos devolver un character generado de forma random
+            return new Warrior("Random", 100, true, 50, 50);
         }
-    }
 
+    }
 }
