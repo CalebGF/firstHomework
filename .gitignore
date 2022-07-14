@@ -10,5 +10,7 @@ target/**
 /target/
 
 #intel_IJ
+.idea
 *.idea
 *.iml
+/.idea/

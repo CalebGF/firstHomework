@@ -2,8 +2,6 @@ package cat.ironhack.warrior;
 
 import cat.ironhack.character.Character;
 
-import java.util.UUID;
-
 public class Warrior extends Character {
     private int stamina;
     private int strength;

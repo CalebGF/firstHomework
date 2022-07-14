@@ -16,7 +16,7 @@ public class Party {
         return id;
     }
 
-    public void setId() {
+    private void setId() {
         id = UUID.randomUUID();
     }
 
@@ -26,5 +26,20 @@ public class Party {
 
     public void setCharacters(ArrayList<Character> characters) {
         this.characters = characters;
+    }
+
+    public ArrayList<Character> getCharactersAlive() {
+        //TODO
+        return null;
+    }
+
+    public ArrayList<Character> getDeadCharacters() {
+        //TODO
+        return null;
+    }
+
+    public boolean isPartyDead() {
+        //TODO
+        return true;
     }
 }
