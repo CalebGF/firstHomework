@@ -27,48 +27,25 @@ public class UtilsParty {
             if (i > 0) {
                 csvContent = currentLine.split(","); //divides the current line i an Array of strings
                 characters.add(setCharacterStats(csvContent));
-                /*String type = csvContent[0].replaceAll("\"", ""); //gets the character type value
-                String wizard = "wizard";
-                String warrior = "warrior";
-                if (type.equals(wizard)) { //filters the Character type value to call apropriate constructor and add it to array
-                    characters.add(createWizard(csvContent));
-                } else if(type.equals(warrior)){
-                    characters.add(createWarrior(csvContent));
-                }else{
-                    throw new Error("There is one or many character type not valid in your csv file.");
-                }*/
             }
         }
         return new Party(characters);
     }
     private static Character setCharacterStats(String[] csvContent){
+        String wizard = "wizard";
+        String warrior = "warrior";
         String name = csvContent[1].replaceAll("\"","");
         int hp = Integer.parseInt(csvContent[2].replaceAll("\"",""));
         boolean isAlive = (1 == Integer.parseInt(csvContent[3].replaceAll("\"","")));
         int manaStamina = Integer.parseInt(csvContent[4].replaceAll("\"",""));
         int intelligenceStrength = Integer.parseInt(csvContent[5].replaceAll("\"",""));
-        if (csvContent[0].replaceAll("\"", "").equals("wizard")){
+        if (csvContent[0].replaceAll("\"", "").equals(wizard)){
             return new Wizard(name, hp, isAlive, manaStamina, intelligenceStrength);
-        }else if(csvContent[0].replaceAll("\"", "").equals("warrior")){
+        }else if(csvContent[0].replaceAll("\"", "").equals(warrior)){
             return new Warrior(name, hp, isAlive, manaStamina, intelligenceStrength);
         }else{
             throw new Error("There is one or many character type not valid in your csv file.");
         }
     }
-    /*private static Character createWizard(String[] csvContent){
-        String name = csvContent[1].replaceAll("\"","");
-        int hp = Integer.parseInt(csvContent[2].replaceAll("\"",""));
-        boolean isAlive = (1 == Integer.parseInt(csvContent[3].replaceAll("\"","")));
-        int Mana = Integer.parseInt(csvContent[4].replaceAll("\"",""));
-        int Intelligence = Integer.parseInt(csvContent[5].replaceAll("\"",""));
-        return new Wizard(name, hp, isAlive, Mana, Intelligence);
-    }
-    private static Character createWarrior(String[] csvContent){
-        String name = csvContent[1].replaceAll("\"","");
-        int hp = Integer.parseInt(csvContent[2].replaceAll("\"",""));
-        boolean isAlive = (1 == Integer.parseInt(csvContent[3].replaceAll("\"","")));
-        int stamina = Integer.parseInt(csvContent[4].replaceAll("\"",""));
-        int strength = Integer.parseInt(csvContent[5].replaceAll("\"",""));
-        return new Warrior(name, hp, isAlive, stamina, strength);
-    }*/
+
 }
