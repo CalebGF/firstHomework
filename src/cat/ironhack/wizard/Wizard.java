@@ -2,8 +2,6 @@ package cat.ironhack.wizard;
 
 import cat.ironhack.character.Character;
 
-import java.util.UUID;
-
 public class Wizard extends Character {
     private int mana;
     private int intelligence;
