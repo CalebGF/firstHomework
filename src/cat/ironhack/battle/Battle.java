@@ -1,5 +1,6 @@
 package cat.ironhack.battle;
 
+import cat.ironhack.character.Character;
 import cat.ironhack.party.Party;
 
 import java.util.ArrayList;

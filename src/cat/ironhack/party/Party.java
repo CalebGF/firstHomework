@@ -1,5 +1,7 @@
 package cat.ironhack.party;
 
+import cat.ironhack.character.Character;
+
 import java.util.ArrayList;
 import java.util.UUID;
 
