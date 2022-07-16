@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="07a5692c-2885-4453-a4d0-606a6394527b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/homework1.uml" beforeDir="false" afterPath="$PROJECT_DIR$/homework1.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cat/ironhack/party/Party.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cat/ironhack/party/Party.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cat/ironhack/utils/UtilsParty.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cat/ironhack/utils/UtilsParty.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cat/ironhack/warrior/Warrior.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cat/ironhack/warrior/Warrior.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cat/ironhack/wizard/Wizard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cat/ironhack/wizard/Wizard.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,15 +18,39 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2Br5fhsxt3JRIPlaDCmCSLZTzEd" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="cat.ironhack.Main" />
+      <module name="firstHomework" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cat.ironhack.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -53,5 +74,8 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>

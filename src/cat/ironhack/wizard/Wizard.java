@@ -13,15 +13,6 @@ public class Wizard extends Character {
         this.mana = mana;
         this.intelligence = intelligence;
     }
-    public void attackEnemy(Character enemy){
-        if (this.mana>=5){
-            enemy.setHp(enemy.getHp()-this.intelligence);
-            this.mana -=5;
-        }else{
-            enemy.setHp((enemy.getHp()-2));
-            this.mana+=1;
-        }
-    }
 
     public int getMana() {
         return mana;
