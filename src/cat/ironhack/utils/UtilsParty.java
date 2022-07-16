@@ -13,45 +13,27 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class UtilsParty {
-
     public static Party generatePartyFromCSV(String csvfile) throws IOException {
         ArrayList<Character> characters = new ArrayList<Character>();
         File file = new File(csvfile);
         Scanner scannedFile = new Scanner(file);
         Path path = Paths.get(csvfile);
-        String[] csvContent;
-        String currentLine;
 
         for (int i = 0; i < Files.lines(path).count()-1; i++) {
-            currentLine = scannedFile.nextLine();
             if (i > 0) {
-                csvContent = currentLine.split(","); //divides the current line i an Array of strings
-                characters.add(setCharacterStats(csvContent));
+                String[] values = scannedFile.nextLine().split(","); //divides the current line i an Array of strings
+                switch (values[0].replaceAll("\"", "")){
+                    case "wizard":
+                        characters.add(new Wizard(values[1],Integer.parseInt(values[2]),Boolean.parseBoolean(values[3]),Integer.parseInt(values[4]),Integer.parseInt(values[5])));
+                        break;
+                    case "warrior":
+                        characters.add(new Warrior(values[1],Integer.parseInt(values[2]),Boolean.parseBoolean(values[3]),Integer.parseInt(values[4]),Integer.parseInt(values[5])));
+                        break;
+                        default:
+                            //aqui un print? con un newError y/o generar un character random?
+                }
             }
         }
         return new Party(characters);
-    }
-    private static Character setCharacterStats(String[] csvContent){
-        String wizard = "wizard";
-        String warrior = "warrior";
-        String name = csvContent[1].replaceAll("\"","");
-        int hp = Integer.parseInt(csvContent[2].replaceAll("\"",""));
-        boolean isAlive = (1 == Integer.parseInt(csvContent[3].replaceAll("\"","")));
-        int manaStamina = Integer.parseInt(csvContent[4].replaceAll("\"",""));
-        int intelligenceStrength = Integer.parseInt(csvContent[5].replaceAll("\"",""));
-        try{
-            if (csvContent[0].replaceAll("\"", "").equals(wizard)){
-                return new Wizard(name, hp, isAlive, manaStamina, intelligenceStrength);
-            }else if(csvContent[0].replaceAll("\"", "").equals(warrior)){
-                return new Warrior(name, hp, isAlive, manaStamina, intelligenceStrength);
-            }else{
-                throw new Error();
-            }
-        }catch(Exception e) {
-            System.out.println("There is one or many character type not valid in your csv file.");
-        }finally {//aqui podriamos devolver un character generado de forma random
-            return new Warrior("Random", 100, true, 50, 50);
-        }
-
     }
 }
