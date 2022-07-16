@@ -1,0 +1,16 @@
+# Java related
+target/**
+*.jar
+*.war
+*.ear
+*.class
+
+# External tool builders
+.externalToolBuilders/
+/target/
+
+#intel_IJ
+.idea
+*.idea
+*.iml
+/.idea/

@@ -1,8 +1,10 @@
 package cat.ironhack.character;
 
+import cat.ironhack.attacker.Attacker;
+
 import java.util.UUID;
 
-public abstract class Character {
+public abstract class Character implements Attacker {
     private UUID id;
     private String name;
     private int hp;
