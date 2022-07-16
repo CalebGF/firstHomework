@@ -11,6 +11,16 @@ public class Warrior extends Character {
         this.stamina = stamina;
         this.strength = strength;
     }
+    public void attackEnemy(Character enemy){
+        if (this.stamina>=5){
+            enemy.setHp(enemy.getHp()-this.strength);
+            this.stamina -=5;
+        }else{
+            double damage = this.strength/2;
+            enemy.setHp((int) (enemy.getHp()-damage));
+            this.stamina+=1;
+        }
+    }
 
     public int getStamina() {
         return stamina;
