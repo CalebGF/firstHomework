@@ -62,7 +62,12 @@ public class Battle {
 
     //return null if there is no winner
     public Party getWinner() {
-        //TODO
-        return null;
+        if(this.party1.getCharactersAlive().size()<this.party2.getCharactersAlive().size()){
+            return this.party2;
+        }else if(this.party2.getCharactersAlive().size()<this.party1.getCharactersAlive().size()){
+            return this.party1;
+        }else{
+            return null;
+        }
     }
 }
