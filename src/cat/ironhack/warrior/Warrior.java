@@ -20,6 +20,9 @@ public class Warrior extends Character {
             enemy.setHp((int) (enemy.getHp()-damage));
             this.stamina+=1;
         }
+        if(enemy.getHp()<=0){
+            enemy.setAlive(false);
+        }
     }
 
     public int getStamina() {

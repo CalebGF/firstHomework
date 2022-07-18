@@ -19,6 +19,9 @@ public class Wizard extends Character {
             enemy.setHp((enemy.getHp()-2));
             this.mana+=1;
         }
+        if(enemy.getHp()<=0){
+            enemy.setAlive(false);
+        }
     }
 
     public int getMana() {
