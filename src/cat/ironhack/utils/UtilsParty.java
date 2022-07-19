@@ -13,6 +13,11 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class UtilsParty {
+
+    public static Party generatePartyRandom() {
+        return null;
+    }
+
     public static Party generatePartyFromCSV(String csvfile) throws IOException {
         ArrayList<Character> characters = new ArrayList<Character>();
         File file = new File(csvfile);
@@ -35,5 +40,9 @@ public class UtilsParty {
             }
         }
         return new Party(characters);
+    }
+
+    public static Party generatePartyManual() {
+        return null;
     }
 }

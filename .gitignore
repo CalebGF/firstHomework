@@ -14,3 +14,6 @@ target/**
 *.idea
 *.iml
 /.idea/
+/out/
+out/**
+
