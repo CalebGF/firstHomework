@@ -56,16 +56,11 @@ public class Battle {
     }
 
     private boolean isBattleOver() {
-        if(this.round>=this.party1.getCharacters().size()){
-            if(party1.isPartyDead()){
-                return true;
-            }else if(party2.isPartyDead()){
-                return true;
-            }else{
-                return false;
-            }
+        if(getWinner()!=null){
+            return true;
+        }else{
+            return false;
         }
-        return true;
     }
 
     //return null if there is no winner
