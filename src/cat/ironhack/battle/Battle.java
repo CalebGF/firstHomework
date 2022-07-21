@@ -62,7 +62,12 @@ public class Battle {
 
     //return null if there is no winner
     public Party getWinner() {
-        //TODO
-        return null;
+        if(this.party1.isPartyDead()){
+            return this.party2;
+        }else if(this.party2.isPartyDead()){
+            return this.party1;
+        }else{
+            return null;
+        }
     }
 }
