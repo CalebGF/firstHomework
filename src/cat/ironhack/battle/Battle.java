@@ -56,8 +56,9 @@ public class Battle {
     }
 
     private boolean isBattleOver() {
-        //TODO
-        return true;
+        boolean isBattleOver = false;
+        if(getWinner()!=null) isBattleOver = true;
+        return isBattleOver;
     }
 
     //return null if there is no winner
