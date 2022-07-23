@@ -41,7 +41,16 @@ public class Party {
     }
 
     public boolean isPartyDead() {
-        //TODO
-        return true;
+        boolean alive = false;
+        int i = 0;
+        while(!alive){
+            if (this.characters.get(i).isAlive()){
+                alive = true;
+            }else if(i==this.characters.size()){
+                break;
+            }
+            i++;
+        }
+        return alive;
     }
 }
