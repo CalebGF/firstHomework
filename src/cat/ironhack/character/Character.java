@@ -38,7 +38,9 @@ public abstract class Character implements Attacker {
 
     public void setHp(int hp) {
         this.hp = Math.max(hp, 0);
-
+        if(this.hp==0){
+            setAlive(false);
+        }
     }
 
     public boolean isAlive() {
