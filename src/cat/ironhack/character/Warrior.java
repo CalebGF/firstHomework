@@ -1,4 +1,4 @@
-package cat.ironhack.warrior;
+package cat.ironhack.character;
 
 import cat.ironhack.character.Character;
 
@@ -10,6 +10,19 @@ public class Warrior extends Character {
         super(name, hp, isAlive);
         this.stamina = stamina;
         this.strength = strength;
+    }
+    public void attackEnemy(Character enemy){
+        if (this.stamina>=5){
+            enemy.setHp(enemy.getHp()-this.strength);
+            this.stamina -=5;
+        }else{
+            double damage = this.strength/2;
+            enemy.setHp((int) (enemy.getHp()-damage));
+            this.stamina+=1;
+        }
+        if(enemy.getHp()<=0){
+            enemy.setAlive(false);
+        }
     }
 
     public int getStamina() {
