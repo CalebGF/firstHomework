@@ -1,4 +1,4 @@
-package cat.ironhack.warrior;
+package cat.ironhack.character;
 
 import cat.ironhack.character.Character;
 

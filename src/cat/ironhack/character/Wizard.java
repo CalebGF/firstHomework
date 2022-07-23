@@ -1,4 +1,4 @@
-package cat.ironhack.wizard;
+package cat.ironhack.character;
 
 import cat.ironhack.character.Character;
 
