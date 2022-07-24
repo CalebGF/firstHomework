@@ -55,24 +55,28 @@ public class Game {
                 //manual
                 party1 = generatePartyManual();
                 party2 = generatePartyManual();
+                battle = new Battle(party1, party2);
                 break;
 
             case "start-menu-options2":
                 //random
                 party1 = generatePartyRandom();
                 party2 = generatePartyRandom();
+                battle = new Battle(party1, party2);
                 break;
 
             case "start-menu-options3":
                 //TODO
                 //CSV
-                String file = "";
-                party1 = generatePartyFromCSV(file);
-                party2 = generatePartyFromCSV(file);
+                String file1 = "src/resources/parties/party1.csv";
+                String file2 = "src/resources/parties/party2.csv";
+                party1 = generatePartyFromCSV(file1);
+                party2 = generatePartyFromCSV(file2);
+                battle = new Battle(party1, party2);
                 break;
         }
 
-        battle = new Battle(party1, party2);
+
     }
 
     private void startBattle(){
@@ -117,4 +121,7 @@ public class Game {
         }
     }
 
+    public Battle getBattle() {
+        return battle;
+    }
 }
