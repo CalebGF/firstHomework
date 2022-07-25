@@ -14,6 +14,7 @@ public class Game {
     private String text;
     private String options;
     private Battle battle;
+
     public Game() {
     }
 
@@ -21,7 +22,7 @@ public class Game {
         String option = "";
         setText(readMenu(menu));
         printMenu();
-        setOptions(readOption(menu+"-options"));
+        setOptions(readOption(menu + "-options"));
         printOption();
         String key;
         switch (menu) {
@@ -35,11 +36,11 @@ public class Game {
 
             case "start-menu":
                 key = new Scanner(System.in).nextLine();
-                while (!key.equals("1") && !key.equals("2") && !key.equals("3")&& !key.equals("EXIT") &&!key.equals("BACK")) {
+                while (!key.equals("1") && !key.equals("2") && !key.equals("3") && !key.equals("EXIT") && !key.equals("BACK")) {
                     printOption();
                     key = new Scanner(System.in).nextLine();
                 }
-                option = key.equals("EXIT") ? "EXIT" : key.equals("BACK") ? "BACK" : menu+"-options"+key;
+                option = key.equals("EXIT") ? "EXIT" : key.equals("BACK") ? "BACK" : menu + "-options" + key;
                 break;
         }
         return option;
@@ -55,12 +56,14 @@ public class Game {
                 //manual
                 party1 = generatePartyManual("Team 1");
                 party2 = generatePartyManual("Team 2");
+                battle = new Battle(party1, party2);
                 break;
 
             case "start-menu-options2":
                 //random
                 party1 = generatePartyRandom();
                 party2 = generatePartyRandom();
+                battle = new Battle(party1, party2);
                 break;
 
             case "start-menu-options3":
@@ -69,14 +72,13 @@ public class Game {
                 String file = "";
                 party1 = generatePartyFromCSV(file);
                 party2 = generatePartyFromCSV(file);
+                battle = new Battle(party1, party2);
                 break;
         }
-
-        battle = new Battle(party1, party2);
     }
 
-    private void startBattle(){
-        //TODO
+    private void startBattle() {
+
     }
 
     public String getText() {
@@ -96,7 +98,7 @@ public class Game {
     }
 
     private void printMenu() {
-        for (String s: getText().split("\n")){
+        for (String s : getText().split("\n")) {
             try {
                 Thread.sleep(500);
             } catch (InterruptedException e) {
@@ -107,7 +109,7 @@ public class Game {
     }
 
     private void printOption() {
-        for (String s: getOptions().split("\n")){
+        for (String s : getOptions().split("\n")) {
             try {
                 Thread.sleep(500);
             } catch (InterruptedException e) {
