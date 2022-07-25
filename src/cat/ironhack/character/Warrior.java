@@ -1,7 +1,5 @@
 package cat.ironhack.character;
 
-import cat.ironhack.character.Character;
-
 public class Warrior extends Character {
     private int stamina;
     private int strength;
@@ -11,6 +9,7 @@ public class Warrior extends Character {
         this.stamina = stamina;
         this.strength = strength;
     }
+    @Override
     public void attackEnemy(Character enemy){
         if (this.stamina>=5){
             enemy.setHp(enemy.getHp()-this.strength);
@@ -40,4 +39,5 @@ public class Warrior extends Character {
     public void setStrength(int strength) {
         this.strength = strength;
     }
+
 }
