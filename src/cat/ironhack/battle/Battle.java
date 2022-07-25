@@ -32,35 +32,6 @@ public class Battle {
         this.graveyard.add(character);
     }
 
-    public ArrayList<Character> getDeadCharacters(){
-        ArrayList<Character> deadCharacters = new ArrayList<Character>();
-        for (Character character : party1.getCharacters()) {
-            if (!character.isAlive()){
-                deadCharacters.add(character);
-            }
-        }
-        for (Character character : party2.getCharacters()) {
-            if (!character.isAlive()){
-                deadCharacters.add(character);
-            }
-        }
-        return deadCharacters;
-    }
-    public ArrayList<Character> getAliveCharacters(){
-        ArrayList<Character> aliveCharacters = new ArrayList<Character>();
-        for (Character character : party1.getCharacters()) {
-            if (character.isAlive()){
-                aliveCharacters.add(character);
-            }
-        }
-        for (Character character : party2.getCharacters()) {
-            if (character.isAlive()){
-                aliveCharacters.add(character);
-            }
-        }
-        return aliveCharacters;
-    }
-
     public int getRound() {
         return round;
     }

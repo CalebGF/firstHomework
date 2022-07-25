@@ -80,19 +80,7 @@ public class Game {
     }
 
     private void startBattle() {
-        System.out.println("Battle starting");
-        for (int i = 1; i < 3; i++) {
-            System.out.println("Party #" + i);
-            int j = 1;
-            for (Character character : battle.getParty1().getCharacters()) {
-                System.out.print("P#" + j + ": " + character.getName() + "  ");
-                j++;
-            }for (Character character : battle.getParty2().getCharacters()) {
-                System.out.print("P#" + j + ": " + character.getName() + "  ");
-                j++;
-            }
-            System.out.println("\n");
-        }
+
     }
 
     public String getText() {
