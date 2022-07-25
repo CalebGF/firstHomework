@@ -5,18 +5,22 @@ Round :1
 Choose the character that you want to use, and the opponent to attack:
 
 ATTACKERS
-1 Tom
-2 Jerry
-3 Homer
-4 Maggie
-5 Lisa
-6 Bart
+1 Frank
+2 Evans
+3 Frank Jr
+4 Clark
+5 Baker
+6 Frank Jr
+7 Adams
+8 Clark Jr
 
 DEFENDERS
-1 Modesto
-2 Eulalio
-3 Gregoria
-4 Tomasa
-5 Fresina
-6 Dolores
+1 Frank
+2 Evans
+3 Frank Jr
+4 Clark
+5 Baker
+6 Frank Jr
+7 Adams
+8 Clark Jr
 ------------GRAVEYARD------------

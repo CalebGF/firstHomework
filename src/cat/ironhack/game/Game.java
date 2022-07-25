@@ -2,6 +2,7 @@ package cat.ironhack.game;
 
 import cat.ironhack.battle.Battle;
 import cat.ironhack.party.Party;
+import cat.ironhack.utils.UtilsParty;
 
 import java.io.IOException;
 import java.util.Scanner;
@@ -54,6 +55,7 @@ public class Game {
     public void showOptions(String option) throws IOException {
         Party party1 = null;
         Party party2 = null;
+        UtilsParty utilsParty = new UtilsParty();
         setOptions(readOption(option));
         printOption();
         switch (option) {
@@ -66,8 +68,8 @@ public class Game {
 
             case "start-menu-options2":
                 //random
-                party1 = generatePartyRandom();
-                party2 = generatePartyRandom();
+                party1 = utilsParty.generatePartyRandom();
+                party2 = utilsParty.generatePartyRandom();
                 battle = new Battle(party1, party2);
                 break;
 
