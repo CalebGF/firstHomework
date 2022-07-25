@@ -1,9 +1,6 @@
 package cat.ironhack.character;
 
-import cat.ironhack.attacker.Attacker;
-import cat.ironhack.character.Character;
-
-public class Warrior extends Character implements Attacker {
+public class Warrior extends Character {
     private int stamina;
     private int strength;
 
