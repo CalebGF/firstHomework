@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 public class Battle {
     private final ArrayList<Character> graveyard;
-    private int round;
+    private int round = 1;
     private Party party1;
     private Party party2;
 

@@ -6,8 +6,7 @@ import cat.ironhack.party.Party;
 import java.io.IOException;
 import java.util.Scanner;
 
-import static cat.ironhack.utils.UtilsMenu.readMenu;
-import static cat.ironhack.utils.UtilsMenu.readOption;
+import static cat.ironhack.utils.UtilsMenu.*;
 import static cat.ironhack.utils.UtilsParty.*;
 
 public class Game {
@@ -19,6 +18,7 @@ public class Game {
     }
 
     public String showMenu(String menu) throws IOException {
+        if (battle !=null) refreshBattleTxt(battle);
         String option = "";
         setText(readMenu(menu));
         printMenu();
@@ -41,6 +41,11 @@ public class Game {
                     key = new Scanner(System.in).nextLine();
                 }
                 option = key.equals("EXIT") ? "EXIT" : key.equals("BACK") ? "BACK" : menu + "-options" + key;
+                break;
+
+            case "battleRound":
+                //NEXT ACTION
+                //TODO
                 break;
         }
         return option;
@@ -67,11 +72,11 @@ public class Game {
                 break;
 
             case "start-menu-options3":
-                //TODO
                 //CSV
-                String file = "";
-                party1 = generatePartyFromCSV(file);
-                party2 = generatePartyFromCSV(file);
+                String file1 = "src/resources/parties/party1.csv";
+                String file2 = "src/resources/parties/party2.csv";
+                party1 = generatePartyFromCSV(file1);
+                party2 = generatePartyFromCSV(file2);
                 battle = new Battle(party1, party2);
                 break;
         }
@@ -119,4 +124,7 @@ public class Game {
         }
     }
 
+    public Battle getBattle() {
+        return battle;
+    }
 }

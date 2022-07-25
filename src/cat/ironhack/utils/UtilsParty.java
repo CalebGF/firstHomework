@@ -1,5 +1,6 @@
 package cat.ironhack.utils;
 
+import cat.ironhack.battle.Battle;
 import cat.ironhack.character.Character;
 import cat.ironhack.party.Party;
 import cat.ironhack.character.Warrior;
@@ -52,8 +53,8 @@ public class UtilsParty {
         File file = new File(csvfile);
         Scanner scannedFile = new Scanner(file);
         Path path = Paths.get(csvfile);
-
-        for (int i = 0; i < Files.lines(path).count()-1; i++) {
+        ArrayList<Character> characters = new ArrayList<Character>();
+        for (int i = 0; i < Files.lines(path).count()+1; i++) {
             if (i > 0) {
                 String[] values = scannedFile.nextLine().split(","); //divides the current line i an Array of strings
                 switch (values[0].replaceAll("\"", "")){
