@@ -7,7 +7,7 @@ public class UtilsRandom {
      * @param max will get the maximal value
      * @return a random number in the range given
      */
-    public int getRandomNum(int min, int max) {
+    public static int getRandomNum(int min, int max) {
         return (int) Math.floor(Math.random() * (max - min + 1) + min);
     }
 }

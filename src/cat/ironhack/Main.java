@@ -17,6 +17,5 @@ public class Main {
                 option = game.showMenu("start-menu");
             }
         }
-        game.showOptions(option);
     }
 }
