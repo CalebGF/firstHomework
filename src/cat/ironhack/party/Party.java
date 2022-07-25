@@ -37,20 +37,10 @@ public class Party {
                 deadCharacters.add(character);
             }
         }
-        for (Character character : characters) {
-            if (!character.isAlive()){
-                deadCharacters.add(character);
-            }
-        }
         return deadCharacters;
     }
     public ArrayList<Character> getAliveCharacters(){
         ArrayList<Character> aliveCharacters = new ArrayList<Character>();
-        for (Character character : characters) {
-            if (character.isAlive()){
-                aliveCharacters.add(character);
-            }
-        }
         for (Character character : characters) {
             if (character.isAlive()){
                 aliveCharacters.add(character);

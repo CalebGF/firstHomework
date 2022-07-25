@@ -1,11 +1,9 @@
 package cat.ironhack.game;
 
 import cat.ironhack.battle.Battle;
-import cat.ironhack.character.Character;
 import cat.ironhack.party.Party;
 
 import java.io.IOException;
-import java.sql.SQLOutput;
 import java.util.Scanner;
 
 import static cat.ironhack.utils.UtilsMenu.readMenu;
