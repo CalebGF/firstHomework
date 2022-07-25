@@ -3,6 +3,7 @@ package cat.ironhack.battle;
 import cat.ironhack.character.Character;
 import cat.ironhack.party.Party;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Battle {
