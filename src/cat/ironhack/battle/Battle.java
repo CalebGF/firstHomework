@@ -3,6 +3,7 @@ package cat.ironhack.battle;
 import cat.ironhack.character.Character;
 import cat.ironhack.party.Party;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Battle {
@@ -29,6 +30,21 @@ public class Battle {
 
     private void addCharacterToGraveyard(Character character) {
         this.graveyard.add(character);
+    }
+
+    public ArrayList<Character> getDeadCharacters(){
+        ArrayList<Character> deadCharacters = new ArrayList<Character>();
+        for (Character character : party1.getCharacters()) {
+            if (!character.isAlive()){
+                deadCharacters.add(character);
+            }
+        }
+        for (Character character : party2.getCharacters()) {
+            if (!character.isAlive()){
+                deadCharacters.add(character);
+            }
+        }
+        return deadCharacters;
     }
 
     public int getRound() {
