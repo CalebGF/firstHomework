@@ -71,7 +71,87 @@ public class UtilsParty {
         return new Party(characters);
     }
 
-    public static Party generatePartyManual() {
-        return null;
+    public static Party generatePartyManual(String team) {
+        Party party = null;
+        characters = new ArrayList<>();
+        System.out.println("Generating "+team);
+        Scanner scanner = new Scanner(System.in);
+        int i =0;
+        while (i<3) {
+            System.out.println("Creating new character "+(i+1)+"/3");
+            String wizardOrWarrior = null;
+            //ask user to introduce 1 o 2  (wizard o warrior)
+            System.out.println("Type '1' To create Wizard\nType '2' To create Warrior");
+            wizardOrWarrior = scanner.nextLine();
+            //Handling user did not introduce 1 or 2
+            while(!(wizardOrWarrior.equals("1")||wizardOrWarrior.equals("2"))) {
+                System.out.println("Type '1' To create Wizard\nType '2' To create Warrior");
+                wizardOrWarrior = scanner.nextLine();
+            }
+
+            System.out.println("Introduce the name of the character");
+            String name = scanner.nextLine();
+            int hp;
+
+            if(wizardOrWarrior.equals("1")) {
+                //50-100
+                System.out.println("Introduce character's hp between 50 and 100");
+                hp = Integer.parseInt(scanner.nextLine());
+                while(!(hp>=50 && hp<=100)) {
+                    System.out.println("Introduce character's hp between 50 and 100");
+                    hp = Integer.parseInt(scanner.nextLine());
+                }
+
+                System.out.println("Introduce wizard's mana between 10 and 50");
+                //10-50
+                int mana = Integer.parseInt(scanner.nextLine());
+                while(!(mana>=10 && mana<=50)) {
+                    System.out.println("Introduce wizard's mana between 10 and 50");
+                    mana = Integer.parseInt(scanner.nextLine());
+                }
+
+                System.out.println("Introduce wizard's intelligence between 1 and 50");
+                //1-50
+                int intelligence = Integer.parseInt(scanner.nextLine());
+                while(!(intelligence>=1 && intelligence<=50)) {
+                    System.out.println("Introduce wizard's intelligence between 1 and 50");
+                    intelligence = Integer.parseInt(scanner.nextLine());
+                }
+
+                characters.add(new Wizard(name,hp,true,mana,intelligence));
+
+
+            } else {
+                //100-200
+                System.out.println("Introduce character's hp between 100 and 200");
+                hp = Integer.parseInt(scanner.nextLine());
+                while(!(hp>=100 && hp<=200)) {
+                    System.out.println("Introduce character's hp between 100 and 200");
+                    hp = Integer.parseInt(scanner.nextLine());
+                }
+
+
+                //10-50
+                System.out.println("Introduce warrior's stamina between 10 and 50");
+                int stamina = Integer.parseInt(scanner.nextLine());
+                while(!(stamina>=10 && stamina<=50)) {
+                    System.out.println("Introduce warrior's stamina between 10 and 50");
+                    stamina = Integer.parseInt(scanner.nextLine());
+                }
+
+                System.out.println("Introduce warrior's strength between 1 and 10");
+                //1-10
+                int strength = Integer.parseInt(scanner.nextLine());
+                while(!(strength>=1 && strength<=10)) {
+                    System.out.println("Introduce warrior's strength between 1 and 10");
+                    strength = Integer.parseInt(scanner.nextLine());
+                }
+                characters.add(new Warrior(name,hp,true,stamina,strength));
+            }
+            System.out.println("New character added");
+            i++;
+        }
+        party = new Party(characters);
+        return party;
     }
 }
