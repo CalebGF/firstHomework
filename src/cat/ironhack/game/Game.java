@@ -1,9 +1,11 @@
 package cat.ironhack.game;
 
 import cat.ironhack.battle.Battle;
+import cat.ironhack.character.Character;
 import cat.ironhack.party.Party;
 
 import java.io.IOException;
+import java.sql.SQLOutput;
 import java.util.Scanner;
 
 import static cat.ironhack.utils.UtilsMenu.readMenu;
@@ -14,6 +16,7 @@ public class Game {
     private String text;
     private String options;
     private Battle battle;
+
     public Game() {
     }
 
@@ -21,7 +24,7 @@ public class Game {
         String option = "";
         setText(readMenu(menu));
         printMenu();
-        setOptions(readOption(menu+"-options"));
+        setOptions(readOption(menu + "-options"));
         printOption();
         String key;
         switch (menu) {
@@ -35,11 +38,11 @@ public class Game {
 
             case "start-menu":
                 key = new Scanner(System.in).nextLine();
-                while (!key.equals("1") && !key.equals("2") && !key.equals("3")&& !key.equals("EXIT") &&!key.equals("BACK")) {
+                while (!key.equals("1") && !key.equals("2") && !key.equals("3") && !key.equals("EXIT") && !key.equals("BACK")) {
                     printOption();
                     key = new Scanner(System.in).nextLine();
                 }
-                option = key.equals("EXIT") ? "EXIT" : key.equals("BACK") ? "BACK" : menu+"-options"+key;
+                option = key.equals("EXIT") ? "EXIT" : key.equals("BACK") ? "BACK" : menu + "-options" + key;
                 break;
         }
         return option;
@@ -55,12 +58,14 @@ public class Game {
                 //manual
                 party1 = generatePartyManual();
                 party2 = generatePartyManual();
+                battle = new Battle(party1, party2);
                 break;
 
             case "start-menu-options2":
                 //random
                 party1 = generatePartyRandom();
                 party2 = generatePartyRandom();
+                battle = new Battle(party1, party2);
                 break;
 
             case "start-menu-options3":
@@ -69,14 +74,25 @@ public class Game {
                 String file = "";
                 party1 = generatePartyFromCSV(file);
                 party2 = generatePartyFromCSV(file);
+                battle = new Battle(party1, party2);
                 break;
         }
-
-        battle = new Battle(party1, party2);
     }
 
-    private void startBattle(){
-        //TODO
+    private void startBattle() {
+        System.out.println("Battle starting");
+        for (int i = 1; i < 3; i++) {
+            System.out.println("Party #" + i);
+            int j = 1;
+            for (Character character : battle.getParty1().getCharacters()) {
+                System.out.print("P#" + j + ": " + character.getName() + "  ");
+                j++;
+            }for (Character character : battle.getParty2().getCharacters()) {
+                System.out.print("P#" + j + ": " + character.getName() + "  ");
+                j++;
+            }
+            System.out.println("\n");
+        }
     }
 
     public String getText() {
@@ -96,7 +112,7 @@ public class Game {
     }
 
     private void printMenu() {
-        for (String s: getText().split("\n")){
+        for (String s : getText().split("\n")) {
             try {
                 Thread.sleep(500);
             } catch (InterruptedException e) {
@@ -107,7 +123,7 @@ public class Game {
     }
 
     private void printOption() {
-        for (String s: getOptions().split("\n")){
+        for (String s : getOptions().split("\n")) {
             try {
                 Thread.sleep(500);
             } catch (InterruptedException e) {
