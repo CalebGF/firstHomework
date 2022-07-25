@@ -25,13 +25,13 @@ public class UtilsMenu {
      * @param battle
      * @throws IOException
      */
-    public static void generateBattleTxt(Battle battle) throws IOException {
+    public static void refreshBattleTxt(Battle battle) throws IOException {
         String battleHeader = "\n\n------------BATTLE PLAYGROUND------------\n";
         String round = "Round :";
         String chooseCharacters = "Choose the character that you want to use, and the opponent to attack:\n";
         String graveyard = "------------GRAVEYARD------------\n";
 
-        FileWriter fileWriter = new FileWriter("src/resources/battleRound.txt", false);
+        FileWriter fileWriter = new FileWriter("src/resources/menu/battleRound.txt", false);
         fileWriter.write(battleHeader);
         fileWriter.write(round+battle.getRound()+"\n");
         fileWriter.write(chooseCharacters);
