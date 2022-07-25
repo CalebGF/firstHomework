@@ -54,8 +54,8 @@ public class Game {
         switch (option) {
             case "start-menu-options1":
                 //manual
-                party1 = generatePartyManual();
-                party2 = generatePartyManual();
+                party1 = generatePartyManual("Team 1");
+                party2 = generatePartyManual("Team 2");
                 battle = new Battle(party1, party2);
                 break;
 
