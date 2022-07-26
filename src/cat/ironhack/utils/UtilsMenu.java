@@ -49,16 +49,16 @@ public class UtilsMenu {
     }
 
     private static void generateList(FileWriter fileWriter, Party party1, Party party2) throws IOException {
-        String attackers = "\nATTACKERS\n";
-        String defenders = "\nDEFENDERS\n";
-        fileWriter.write(attackers);
-        for (int i = 0; i < party1.getCharacters().size(); i++) {
-            fileWriter.write((i+1) + " " + party1.getCharacters().get(i).getName()+"\n");
+        String charactersHeader = "\nATTACKERS---------------DEFENDERS\n";
+        fileWriter.write(charactersHeader);
+        for (int i = 0; i < Math.max(party1.getCharacters().size(), party2.getCharacters().size()); i++) {
+            if(party2.getCharacters().size()<i+1){
+                fileWriter.write((i+1) + "- " + party1.getCharacters().get(i).getName()+"------------------"+"DEAD\n");
+            }else if(party1.getCharacters().size()<i+1){
+                fileWriter.write((i+1) + "- DEAD " +"------------------"+party2.getCharacters().get(i).getName()+"\n");
+            }else{
+                fileWriter.write((i+1) +"- "+party1.getCharacters().get(i).getName()+"------------------"+party2.getCharacters().get(i).getName()+"\n");
+            }
         }
-        fileWriter.write(defenders);
-        for (int i = 0; i < party2.getCharacters().size(); i++) {
-            fileWriter.write((i+1) + " " + party2.getCharacters().get(i).getName()+"\n");
-        }
-
     }
 }
