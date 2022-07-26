@@ -79,7 +79,7 @@ public class UtilsParty {
         Scanner scanner = new Scanner(System.in);
         int i =1;
         //It will ask the user to create up to 3 characters
-        while (i<3) {
+        while (i<=3) {
             System.out.println("Creating new character "+i+"/3");
             String wizardOrWarrior = null;
 
