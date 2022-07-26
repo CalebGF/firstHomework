@@ -20,7 +20,6 @@ public class UtilsParty {
      *@param randomNum will call the method from utilsRandom and generate a random number
      */
 
-    static ArrayList<Character> characters = new ArrayList<Character>();
     static ArrayList<String> names = new ArrayList<String>(Arrays.asList("Adams", "Baker", "Clark", "Davis", "Evans", "Frank", "Ghosh"));
     private static UtilsRandom utilsRandom;
 
@@ -30,6 +29,7 @@ public class UtilsParty {
      */
     public static Party generatePartyRandom() {
         //To generate the partySize randomly
+        ArrayList<Character> characters = new ArrayList<Character>();
         int partySize = utilsRandom.getRandomNum(2,15);
         for (int i = 0; i < partySize; i++) {
             String name = names.get(utilsRandom.getRandomNum(0, 5));
@@ -75,7 +75,7 @@ public class UtilsParty {
 
     public static Party generatePartyManual(String team) {
         Party party = null;
-        characters = new ArrayList<>();
+        ArrayList<Character> characters = new ArrayList<>();
         System.out.println("Generating "+team);
         Scanner scanner = new Scanner(System.in);
         int i =1;

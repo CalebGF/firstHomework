@@ -5,22 +5,27 @@ Round :1
 Choose the character that you want to use, and the opponent to attack:
 
 ATTACKERS
-1 Frank
+1 Clark
 2 Evans
-3 Frank Jr
-4 Clark
-5 Baker
-6 Frank Jr
-7 Adams
+3 Davis
+4 Davis Jr
+5 Frank
+6 Clark Jr
+7 Baker
 8 Clark Jr
+9 Adams
+10 Davis Jr
+11 Frank Jr
+12 Evans Jr
+13 Frank Jr
 
 DEFENDERS
 1 Frank
 2 Evans
-3 Frank Jr
+3 Baker
 4 Clark
-5 Baker
-6 Frank Jr
-7 Adams
+5 Clark Jr
+6 Davis
+7 Clark Jr
 8 Clark Jr
 ------------GRAVEYARD------------
