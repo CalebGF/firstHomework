@@ -53,4 +53,9 @@ public class Party {
         //TODO
         return true;
     }
+
+    @Override
+    public String toString() {
+        return "Party " + "ID" + id + "Ch4r4ct3rs: " + characters + ".";
+    }
 }
