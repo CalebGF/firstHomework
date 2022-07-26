@@ -49,15 +49,26 @@ public class UtilsMenu {
     }
 
     private static void generateList(FileWriter fileWriter, Party party1, Party party2) throws IOException {
-        String charactersHeader = "\nATTACKERS---------------DEFENDERS\n";
+        String charactersHeader = "\nPARTY(1)----------------PARTY(2)\n";
+
         fileWriter.write(charactersHeader);
         for (int i = 0; i < Math.max(party1.getCharacters().size(), party2.getCharacters().size()); i++) {
             if(party2.getCharacters().size()<i+1){
-                fileWriter.write((i+1) + "- " + party1.getCharacters().get(i).getName()+"------------------"+"DEAD\n");
+                fileWriter.write((i + 1) + "-" + party1.getCharacters().get(i).getName() + "\n");
             }else if(party1.getCharacters().size()<i+1){
-                fileWriter.write((i+1) + "- DEAD " +"------------------"+party2.getCharacters().get(i).getName()+"\n");
+                String str = "                        " +(i + 1) +" "+
+                        party2.getCharacters().get(i).getName() + "\n";
+                fileWriter.write(str);
             }else{
-                fileWriter.write((i+1) +"- "+party1.getCharacters().get(i).getName()+"------------------"+party2.getCharacters().get(i).getName()+"\n");
+                StringBuilder str = new StringBuilder();
+                str.append(i + 1).append(" ").append(party1.getCharacters().get(i).getName());
+                int j = 0;
+                while(j+party1.getCharacters().get(i).getName().length()<22){
+                    str.append(' ');
+                    j++;
+                }
+                str.append((i+1)+" "+party2.getCharacters().get(i).getName()).append("\n");
+                fileWriter.write(str.toString());
             }
         }
     }
