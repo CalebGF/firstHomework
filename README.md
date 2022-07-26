@@ -41,7 +41,7 @@ Together, they form a dream team. Together they are able to fight tough battles 
  
                |--\_|_//--|  
 
-Join us and define your party chosing one of this three different ways:
+Join us and define your party choosing one of this three different ways:
 - manual;
 - random;
 - csv project
