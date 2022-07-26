@@ -1,1 +1,3 @@
 Let's create all characters for each team(Party) manually...
+
+Let's create two parties with 3 different characters in each party

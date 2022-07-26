@@ -1,0 +1,7 @@
+type,name,hp,isAlive,mana-stamina,intelligence-strength
+warrior,Modesto,100,true,30,7
+wizard,Eulalio,100,true,30,25
+warrior,Gregoria,80,true,40,9
+wizard,Tomasa,70,true,45,35
+warrior,Fresina,70,true,50,6
+wizard,Dolores,50,true,50,45

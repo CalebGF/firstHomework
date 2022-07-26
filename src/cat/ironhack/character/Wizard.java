@@ -1,6 +1,4 @@
-package cat.ironhack.wizard;
-
-import cat.ironhack.character.Character;
+package cat.ironhack.character;
 
 public class Wizard extends Character {
     private int mana;
@@ -10,6 +8,18 @@ public class Wizard extends Character {
         super(name, hp, isAlive);
         this.mana = mana;
         this.intelligence = intelligence;
+    }
+    public void attackEnemy(Character enemy){
+        if (this.mana>=5){
+            enemy.setHp(enemy.getHp()-this.intelligence);
+            this.mana -=5;
+        }else{
+            enemy.setHp((enemy.getHp()-2));
+            this.mana+=1;
+        }
+        if(enemy.getHp()<=0){
+            enemy.setAlive(false);
+        }
     }
 
     public int getMana() {

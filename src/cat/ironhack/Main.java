@@ -18,6 +18,6 @@ public class Main {
             }
         }
         game.showOptions(option);
-        //TODO
+        game.showMenu("battleRound");
     }
 }

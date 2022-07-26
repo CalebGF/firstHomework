@@ -30,18 +30,32 @@ public class Party {
         this.characters = characters;
     }
 
-    public ArrayList<Character> getCharactersAlive() {
-        //TODO
-        return null;
+    public ArrayList<Character> getDeadCharacters(){
+        ArrayList<Character> deadCharacters = new ArrayList<Character>();
+        for (Character character : characters) {
+            if (!character.isAlive()){
+                deadCharacters.add(character);
+            }
+        }
+        return deadCharacters;
     }
-
-    public ArrayList<Character> getDeadCharacters() {
-        //TODO
-        return null;
+    public ArrayList<Character> getAliveCharacters(){
+        ArrayList<Character> aliveCharacters = new ArrayList<Character>();
+        for (Character character : characters) {
+            if (character.isAlive()){
+                aliveCharacters.add(character);
+            }
+        }
+        return aliveCharacters;
     }
 
     public boolean isPartyDead() {
         //TODO
         return true;
+    }
+
+    @Override
+    public String toString() {
+        return "Party " + "ID" + id + "Ch4r4ct3rs: " + characters + ".";
     }
 }

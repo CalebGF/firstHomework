@@ -4,7 +4,7 @@ import cat.ironhack.attacker.Attacker;
 
 import java.util.UUID;
 
-public abstract class Character implements Attacker {
+public abstract class Character implements Attacker{
     private UUID id;
     private String name;
     private int hp;
@@ -37,7 +37,10 @@ public abstract class Character implements Attacker {
     }
 
     public void setHp(int hp) {
-        this.hp = hp;
+        this.hp = Math.max(hp, 0);
+        if(this.hp==0){
+            setAlive(false);
+        }
     }
 
     public boolean isAlive() {
@@ -46,5 +49,10 @@ public abstract class Character implements Attacker {
 
     public void setAlive(boolean alive) {
         isAlive = alive;
+    }
+
+    @Override
+    public String toString() {
+        return "Ch4r4ct3r" + "ID" + id + ", NAME" + name + '\'' + ", VITALITY" + hp + ",ALIVEORNOT " + isAlive;
     }
 }
