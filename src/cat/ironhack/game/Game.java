@@ -46,7 +46,28 @@ public class Game {
                 break;
 
             case "battleRound":
-                //TODO
+                UtilsGame utilsGame = new UtilsGame();
+                String idCharacter1;
+                String idCharacter2;
+
+                System.out.println("Choose a valid character from Party1: ");
+                key = new Scanner(System.in).nextLine();
+                //While the given key is invalid, it will ask again until it fit the size of the character array
+                while (!utilsGame.validCharacter(battle.getParty1().getCharacters(), Integer.parseInt(key))) {
+                    System.out.println("Choose a valid character from Party1: ");
+                    key = new Scanner(System.in).nextLine();
+                }
+                idCharacter1 = key;
+                System.out.println("Choose a valid character from Party2: ");
+                key = new Scanner(System.in).nextLine();
+                //While the given key is invalid, it will ask again until it fit the size of the character array
+                while (!utilsGame.validCharacter(battle.getParty2().getCharacters(), Integer.parseInt(key))) {
+                    System.out.println("Choose a valid character from Party2: ");
+                    key = new Scanner(System.in).nextLine();
+                }
+                idCharacter2 = key;
+                //This is a string with the id of both characters chosen by the user
+                option = idCharacter1 + "," + idCharacter2;
                 break;
         }
         return option;
