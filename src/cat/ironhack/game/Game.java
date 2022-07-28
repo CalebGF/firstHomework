@@ -16,6 +16,9 @@ public class Game {
     private String options;
     private Battle battle;
 
+    private String idCharacter1;
+    private String idCharacter2;
+
     public Game() {
     }
 
@@ -47,8 +50,7 @@ public class Game {
 
             case "battleRound":
                 UtilsGame utilsGame = new UtilsGame();
-                String idCharacter1;
-                String idCharacter2;
+
 
                 System.out.println("Choose a valid character from Party1: ");
                 key = new Scanner(System.in).nextLine();
@@ -66,7 +68,10 @@ public class Game {
                         System.out.println("Choose a valid character from Party2: ");
                         key = new Scanner(System.in).nextLine();
                     }
-                    idCharacter2 = key;
+                    if (!key.equals("BACK") && !key.equals("EXIT")){
+                        idCharacter2 = key;
+                        battle.battleRound(idCharacter1, idCharacter2);
+                    }
                     //This is a string with the id of both characters chosen by the user
                 }
                 option = key.equals("EXIT") ? "EXIT" : key.equals("BACK") ? "BACK" : menu + "-options" + key;

@@ -19,9 +19,8 @@ public class Battle {
     }
 
     //String to show character winner
-    public String battleRound(Character character1,Character character2) {
-        //TODO
-        return null;
+    public void battleRound(String character1, String character2) {
+        System.out.println("Char 1 :" + character1 + " Char 2 :" + character2 + " A PELEAAAAR");
     }
 
     public ArrayList<Character> getGraveyard() {

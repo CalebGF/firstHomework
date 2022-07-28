@@ -8,7 +8,7 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
         Game game = new Game();
-        //game.showMenu("start-welcome");
+        game.showMenu("start-welcome");
         String option = game.showMenu("start-menu");
         while (option.equals("EXIT") || option.equals("BACK")) {
             if (option.equals("EXIT")) System.exit(0);

@@ -5,10 +5,13 @@ Round :1
 Choose the character that you want to use, and the opponent to attack:
 
 PARTY(1)----------------PARTY(2)
-1 Tom                   1 Modesto
-2 Jerry                 2 Eulalio
-3 Homer                 3 Gregoria
-4 Maggie                4 Tomasa
-5 Lisa                  5 Fresina
-6 Bart                  6 Dolores
+1 Davis                 1 Evans
+2 Baker                 2 Frank
+3 Evans                 3 Evans Jr
+4 Baker Jr              4 Baker
+5 Baker Jr              5 Clark
+6-Evans Jr
+7-Evans Jr
+8-Davis Jr
+9-Davis Jr
 ------------GRAVEYARD------------
