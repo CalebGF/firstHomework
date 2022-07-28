@@ -1,6 +1,5 @@
 package cat.ironhack.utils;
 
-import cat.ironhack.battle.Battle;
 import cat.ironhack.character.Character;
 import cat.ironhack.party.Party;
 import cat.ironhack.character.Warrior;
@@ -21,9 +20,8 @@ public class UtilsParty {
      *@param randomNum will call the method from utilsRandom and generate a random number
      */
 
-    static ArrayList<Character> characters = new ArrayList<Character>();
     static ArrayList<String> names = new ArrayList<String>(Arrays.asList("Adams", "Baker", "Clark", "Davis", "Evans", "Frank", "Ghosh"));
-    private static UtilsRandom randomNum;
+    private static UtilsRandom utilsRandom;
 
     /**
      * This method will generate random values given some limits
@@ -31,16 +29,19 @@ public class UtilsParty {
      */
     public static Party generatePartyRandom() {
         //To generate the partySize randomly
-        int partySize = randomNum.getRandomNum(2,15);
+        ArrayList<Character> characters = new ArrayList<Character>();
+        int partySize = utilsRandom.getRandomNum(2,15);
         for (int i = 0; i < partySize; i++) {
-            String name = names.get(randomNum.getRandomNum(0, 5));
-            int healthPoints = randomNum.getRandomNum(50, 100);
-            int staminaOrMana = randomNum.getRandomNum(10,50);
-            int strengthOrIntelligence = randomNum.getRandomNum(1,50);
+            String name = names.get(utilsRandom.getRandomNum(0, 5));
+            //If there is a character with the same name, it will add "Jr" after it's name
+            if (!characters.isEmpty() && utilsRandom.repeatedName(name,characters)) { name += " Jr";}
+            int healthPoints = utilsRandom.getRandomNum(50, 100);
+            int staminaOrMana = utilsRandom.getRandomNum(10,50);
+            int strengthOrIntelligence = utilsRandom.getRandomNum(1,50);
             boolean isAlive = true;
 
             //Having all the random values now we can randomly decide if it's going to be a Warrior or Wizard
-            if (randomNum.getRandomNum(0,1) == 0){
+            if (utilsRandom.getRandomNum(0,1) == 0){
                 characters.add(new Wizard(name, healthPoints, isAlive, staminaOrMana, strengthOrIntelligence));
             }else{
                 characters.add(new Warrior(name, healthPoints, isAlive, staminaOrMana, strengthOrIntelligence));
@@ -74,7 +75,7 @@ public class UtilsParty {
 
     public static Party generatePartyManual(String team) {
         Party party = null;
-        characters = new ArrayList<>();
+        ArrayList<Character> characters = new ArrayList<>();
         System.out.println("Generating "+team);
         Scanner scanner = new Scanner(System.in);
         int i =1;

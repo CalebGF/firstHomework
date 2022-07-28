@@ -7,39 +7,7 @@ In this world, wizard and warrior´party fight each other to implant your rule´
 If a wizard has powers like Intelligence and Main, the warrior has powers like Stamina and strength.  
 Together, they form a dream team. Together they are able to fight tough battles against your enemies!
 
-                     /"\ 
- 
-                    |\./|  
- 
-                   |   |  
- 
-                   |>~<|  
- 
-                   |   |  
- 
-                /'\|   |/'\..  
- 
-            /~\|   |   |   | \  
- 
-           |   =[@]=   |   |  \  
- 
-           |   |   |   |   |   \  
- 
-           | ~   ~   ~   ~ |`   )  
- 
-           |                   /  
- 
-            \                 /  
- 
-             \               /  
- 
-              \    _____    /  
- 
-               |--//''`\--|  
- 
-               | (( +==)) |  
- 
-               |--\_|_//--|  
+              
 
 Join us and define your party choosing one of this three different ways:
 - manual;

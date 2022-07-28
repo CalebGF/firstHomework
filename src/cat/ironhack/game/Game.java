@@ -2,6 +2,8 @@ package cat.ironhack.game;
 
 import cat.ironhack.battle.Battle;
 import cat.ironhack.party.Party;
+import cat.ironhack.utils.UtilsGame;
+import cat.ironhack.utils.UtilsParty;
 
 import java.io.IOException;
 import java.util.Scanner;
@@ -44,7 +46,6 @@ public class Game {
                 break;
 
             case "battleRound":
-                //NEXT ACTION
                 //TODO
                 break;
         }
