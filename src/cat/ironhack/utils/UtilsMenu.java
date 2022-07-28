@@ -53,21 +53,21 @@ public class UtilsMenu {
 
         fileWriter.write(charactersHeader);
         for (int i = 0; i < Math.max(party1.getCharacters().size(), party2.getCharacters().size()); i++) {
-            if(party2.getCharacters().size()<i+1){
-                fileWriter.write((i + 1) + "-" + party1.getCharacters().get(i).getName() + "\n");
-            }else if(party1.getCharacters().size()<i+1){
+            if(party2.getAliveCharacters().size()<i+1){
+                fileWriter.write((i + 1) + "-" + party1.getAliveCharacters().get(i).getName() + "\n");
+            }else if(party1.getAliveCharacters().size()<i+1){
                 String str = "                        " +(i + 1) +" "+
-                        party2.getCharacters().get(i).getName() + "\n";
+                        party2.getAliveCharacters().get(i).getName() + "\n";
                 fileWriter.write(str);
             }else{
                 StringBuilder str = new StringBuilder();
-                str.append(i + 1).append(" ").append(party1.getCharacters().get(i).getName());
+                str.append(i + 1).append(" ").append(party1.getAliveCharacters().get(i).getName());
                 int j = 0;
-                while(j+party1.getCharacters().get(i).getName().length()<22){
+                while(j+party1.getAliveCharacters().get(i).getName().length()<22){
                     str.append(' ');
                     j++;
                 }
-                str.append((i+1)+" "+party2.getCharacters().get(i).getName()).append("\n");
+                str.append((i+1)+" "+party2.getAliveCharacters().get(i).getName()).append("\n");
                 fileWriter.write(str.toString());
             }
         }
