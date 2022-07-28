@@ -53,21 +53,24 @@ public class Game {
                 System.out.println("Choose a valid character from Party1: ");
                 key = new Scanner(System.in).nextLine();
                 //While the given key is invalid, it will ask again until it fit the size of the character array
-                while (!utilsGame.validCharacter(battle.getParty1().getCharacters(), Integer.parseInt(key))) {
+                while (!utilsGame.validCharacter(battle.getParty1().getCharacters(), key) && !key.equals("EXIT") && !key.equals("BACK")) {
                     System.out.println("Choose a valid character from Party1: ");
                     key = new Scanner(System.in).nextLine();
                 }
                 idCharacter1 = key;
-                System.out.println("Choose a valid character from Party2: ");
-                key = new Scanner(System.in).nextLine();
-                //While the given key is invalid, it will ask again until it fit the size of the character array
-                while (!utilsGame.validCharacter(battle.getParty2().getCharacters(), Integer.parseInt(key))) {
+                if (!key.equals("BACK") && !key.equals("EXIT")){
                     System.out.println("Choose a valid character from Party2: ");
                     key = new Scanner(System.in).nextLine();
+                    //While the given key is invalid, it will ask again until it fit the size of the character array
+                    while (!utilsGame.validCharacter(battle.getParty2().getCharacters(), key) && !key.equals("EXIT") && !key.equals("BACK")) {
+                        System.out.println("Choose a valid character from Party2: ");
+                        key = new Scanner(System.in).nextLine();
+                    }
+                    idCharacter2 = key;
+                    //This is a string with the id of both characters chosen by the user
                 }
-                idCharacter2 = key;
-                //This is a string with the id of both characters chosen by the user
-                option = idCharacter1 + "," + idCharacter2;
+                option = key.equals("EXIT") ? "EXIT" : key.equals("BACK") ? "BACK" : menu + "-options" + key;
+
                 break;
         }
         return option;
