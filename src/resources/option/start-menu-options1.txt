@@ -1,3 +1,36 @@
 Let's create all characters for each team(Party) manually...
 
-Let's create two parties with 3 different characters in each party
+Let's create two parties with 3 different characters in each party:
+
+First, you can choose whether you want to create a wizard or a warrior.
+
+➷ Type "1" to create a Wizard
+➷ Type "2" to create a Warrior
+
+Next, you can choose a name for it.
+
+➷ Type the desired name. For example, "Valentina".
+
+Then, you can customise the properties of the character, within pre-set parameters.
+These are the limits of your customisation:
+
+☆ Wizard Case ☆
+================
+
+- Health Points: 50-100
+- Mana: 10-50
+- Intelligence: 1-50
+
+× Warrior Case ×
+================
+
+- Health Points: 100-200
+- Stamina: 10-50
+- Strength: 1-10
+
+Once you have selected the 6 characters, you will have created the two personalised parties!
+
+Let's fun! ٩(-̮̮̃-̃)۶
+
+
+
