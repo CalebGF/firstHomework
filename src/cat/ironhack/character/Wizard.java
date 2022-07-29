@@ -39,8 +39,7 @@ public class Wizard extends Character {
     }
     @Override
     public String toString() {
-        return super.getName().toUpperCase()+" { " + this.getClass().getName().substring(23)+
-                ", Health: "+ super.getHp()+
+        return super.toString()+" { Type: " + this.getClass().getName().substring(23)+
                 ", Mana: "+ mana+
                 ", Intelligence: " + intelligence+
                 "}";
