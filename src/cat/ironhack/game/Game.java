@@ -75,7 +75,6 @@ public class Game {
                     }
                 }
                 option = key.equals("EXIT") ? "EXIT" : key.equals("BACK") ? "BACK" : menu + "";
-
                 break;
         }
         return option;
@@ -135,7 +134,7 @@ public class Game {
     private void printMenu() {
         for (String s : getText().split("\n")) {
             try {
-                Thread.sleep(500);
+                Thread.sleep(300);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -146,7 +145,7 @@ public class Game {
     private void printOption() {
         for (String s : getOptions().split("\n")) {
             try {
-                Thread.sleep(500);
+                Thread.sleep(300);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
