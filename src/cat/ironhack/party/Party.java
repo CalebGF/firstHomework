@@ -50,8 +50,7 @@ public class Party {
     }
 
     public boolean isPartyDead() {
-        //TODO
-        return true;
+        return this.characters.stream().noneMatch(Character::isAlive);
     }
 
     @Override

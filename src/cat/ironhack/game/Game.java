@@ -46,7 +46,12 @@ public class Game {
                 break;
 
             case "battleRound":
-                //TODO
+                key = new Scanner(System.in).nextLine();
+                while (!key.equals("1") && !key.equals("2") && !key.equals("3") && !key.equals("EXIT") && !key.equals("BACK")) {
+                    printOption();
+                    key = new Scanner(System.in).nextLine();
+                }
+                option = key.equals("EXIT") ? "EXIT" : key.equals("BACK") ? "BACK" : menu + "-options" + key;
                 break;
         }
         return option;
@@ -106,7 +111,7 @@ public class Game {
     private void printMenu() {
         for (String s : getText().split("\n")) {
             try {
-                Thread.sleep(500);
+                Thread.sleep(300);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -117,7 +122,7 @@ public class Game {
     private void printOption() {
         for (String s : getOptions().split("\n")) {
             try {
-                Thread.sleep(500);
+                Thread.sleep(300);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
