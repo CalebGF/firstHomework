@@ -52,6 +52,11 @@ public abstract class Character implements Attacker{
     }
 
     @Override
+    public void attackEnemy(Character enemy) {
+
+    }
+
+    @Override
     public String toString() {
         return "Ch4r4ct3r" + "ID" + id + ", NAME" + name + '\'' + ", VITALITY" + hp + ",ALIVEORNOT " + isAlive;
     }

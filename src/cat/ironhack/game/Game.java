@@ -70,9 +70,9 @@ public class Game {
                     }
                     if (!key.equals("BACK") && !key.equals("EXIT")){
                         idCharacter2 = key;
-                        battle.battleRound(idCharacter1, idCharacter2);
+                        //Sending the characters at the id less 1 to get the exact position in array of those characters
+                        battle.battleRound(battle.getParty1().getCharacters().get(Integer.parseInt(idCharacter1)- 1), battle.getParty2().getCharacters().get(Integer.parseInt(idCharacter2)- 1));
                     }
-                    //This is a string with the id of both characters chosen by the user
                 }
                 option = key.equals("EXIT") ? "EXIT" : key.equals("BACK") ? "BACK" : menu + "-options" + key;
 
