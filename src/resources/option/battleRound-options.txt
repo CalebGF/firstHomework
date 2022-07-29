@@ -1,0 +1,14 @@
+Hello, fighter!
+
+Are you ready for the century´s battle?
+The future of humanity start now! Will which rules dominate the world?
+
+Each party has fourteen players: they are warrior and wizards with yours special powers.
+The Party One wish a very dark and dangers world. The violence and hate are the main rules.
+In opposite, the Party Two desire a world with git add respect and friendship. These are your main rules.
+
+To get to the world you want, choose a valid player - warrior or wizards - to fight each other now!
+
+You can type BACK to return to Menu Options or type EXIT to exit the play.
+
+Go!
