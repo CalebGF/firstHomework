@@ -43,7 +43,6 @@ public class Warrior extends Character {
     @Override
     public String toString() {
         return super.toString()+" { Type: " + this.getClass().getName().substring(23)+
-                ", Health: "+ super.getHp()+
                 ", Strength: "+ strength+
                 ", Stamina: " + stamina+
                 "}";
