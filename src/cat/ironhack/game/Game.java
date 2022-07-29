@@ -74,7 +74,7 @@ public class Game {
                         battle.battleRound(battle.getParty1().getCharacters().get(Integer.parseInt(idCharacter1)- 1), battle.getParty2().getCharacters().get(Integer.parseInt(idCharacter2)- 1));
                     }
                 }
-                option = key.equals("EXIT") ? "EXIT" : key.equals("BACK") ? "BACK" : menu + "-options" + key;
+                option = key.equals("EXIT") ? "EXIT" : key.equals("BACK") ? "BACK" : menu + "";
 
                 break;
         }

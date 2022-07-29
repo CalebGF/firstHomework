@@ -5,17 +5,18 @@ Round :1
 Choose the character that you want to use, and the opponent to attack:
 
 PARTY(1)----------------PARTY(2)
-1 Clark                 1 Clark
-2 Baker                 2 Adams
-3 Frank                 3 Evans
-4 Clark Jr              4 Frank
-5 Frank Jr              5 Evans Jr
-6 Evans                 6 Davis
-7 Adams                 7 Frank Jr
-8 Adams Jr              8 Frank Jr
-9 Evans Jr              9 Baker
-10 Frank Jr              10 Clark Jr
-11 Frank Jr              11 Adams Jr
-                        12 Adams Jr
-                        13 Davis Jr
+1 Baker                 1 Frank
+2 Evans                 2 Clark
+                        3 Evans
+                        4 Evans Jr
+                        5 Adams
+                        6 Davis
+                        7 Davis Jr
+                        8 Evans Jr
+                        9 Frank Jr
+                        10 Evans Jr
+                        11 Davis Jr
+                        12 Clark Jr
+                        13 Clark Jr
+                        14 Clark Jr
 ------------GRAVEYARD------------

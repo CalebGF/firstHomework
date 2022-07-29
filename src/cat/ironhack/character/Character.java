@@ -51,10 +51,6 @@ public abstract class Character implements Attacker{
         isAlive = alive;
     }
 
-    @Override
-    public void attackEnemy(Character enemy) {
-
-    }
 
     @Override
     public String toString() {
