@@ -23,7 +23,7 @@ public class UtilsMenu {
     //method to generate the menu shown after a fight between two characters is over
     public static void roundMenu(Battle battle, String id1, String id2) throws IOException {
         String roundHeader = "-".repeat(17)+"ROUND IS OVER"+"-".repeat(17)+"\n";
-        FileWriter fileWriter = new FileWriter("src/resources/menu/roundScreen-options.txt", false);
+        FileWriter fileWriter = new FileWriter("src/resources/menu/roundScreen.txt", false);
         fileWriter.write(roundHeader);
         int player1Id = Integer.parseInt(id1);
         int player2Id = Integer.parseInt(id2);
@@ -31,14 +31,18 @@ public class UtilsMenu {
         Character player2 = battle.getParty1().getAliveCharacters().get(player2Id);
 
         String killed = "====KILLED===>>";
+        String dead = "<<===YOU ARE DEAD===>>";
         if (player1.isAlive()){//if player 1 won the fight, we build the string showing him as winner, or otherwise.
             fileWriter.write("         "+player1.getName().toUpperCase()+
                     killed+player2.getName().toUpperCase()+"\n");
             fileWriter.write("\nStats: "+player1);
+        }else if(player2.isAlive()){
+            fileWriter.write(player2.getName().toUpperCase()+
+                    killed+player1.getName().toUpperCase());
+            fileWriter.write("\nStats: "+player2);
         }else{
             fileWriter.write(player2.getName().toUpperCase()+
-                    " killed "+player1.getName().toUpperCase());
-            fileWriter.write("\nStats: "+player2);
+                    dead+player1.getName().toUpperCase());
         }
         fileWriter.close();
     }
