@@ -56,7 +56,7 @@ public class Battle {
         this.party2 = party2;
     }
 
-    private boolean isBattleOver() {
+    public boolean isBattleOver() {
         boolean isBattleOver = false;
         if(getWinner()!=null) isBattleOver = true;
         return isBattleOver;
