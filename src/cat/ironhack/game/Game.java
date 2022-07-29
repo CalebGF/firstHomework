@@ -76,6 +76,15 @@ public class Game {
                 }
                 option = key.equals("EXIT") ? "EXIT" : key.equals("BACK") ? "BACK" : menu + "";
                 break;
+
+            case "roundScreen":
+                key = new Scanner(System.in).nextLine();
+                while (!key.equals("Y") && !key.equals("EXIT") && !key.equals("BACK")) {
+                    printOption();
+                    key = new Scanner(System.in).nextLine();
+                }
+                option = key.equals("EXIT") ? "EXIT" : key.equals("BACK") ? "BACK" : "";
+                break;
         }
         return option;
     }
