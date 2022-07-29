@@ -56,7 +56,7 @@ public class Main {
             }
 
             optionRoundScreen = game.showMenu("roundScreen");// inside call to "roundScreen-options"
-
+            battleIsOver = game.getBattle().isBattleOver();
 
         }
 

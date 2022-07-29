@@ -1,14 +1,15 @@
 
 ----------------------------------------PARTY(1)----------------------------------------------------------------------------------------------------PARTY(2)----------------------------------------
-                                                                                                 1-Ch4r4ct3r NAME: Modesto, VITALITY: 100 { Type: Warrior, Strength: 7, Stamina: 30}
-2-Ch4r4ct3r NAME: Jerry, VITALITY: 100 { Type: Wizard, Mana: 30, Intelligence: 25}              2-Ch4r4ct3r NAME: Eulalio, VITALITY: 100 { Type: Wizard, Mana: 30, Intelligence: 25}
+                                                                                                  1-Ch4r4ct3r NAME: Modesto, VITALITY: 68 { Type: Warrior, Strength: 7, Stamina: 20}
+                                                                                                2-Ch4r4ct3r NAME: Eulalio, VITALITY: 100 { Type: Wizard, Mana: 30, Intelligence: 25}
                                                                                                  3-Ch4r4ct3r NAME: Gregoria, VITALITY: 80 { Type: Warrior, Strength: 9, Stamina: 40}
-                                                                                                  4-Ch4r4ct3r NAME: Tomasa, VITALITY: 49 { Type: Wizard, Mana: 30, Intelligence: 35}
+                                                                                                  4-Ch4r4ct3r NAME: Tomasa, VITALITY: 70 { Type: Wizard, Mana: 45, Intelligence: 35}
                                                                                                   5-Ch4r4ct3r NAME: Fresina, VITALITY: 70 { Type: Warrior, Strength: 6, Stamina: 50}
                                                                                                  6-Ch4r4ct3r NAME: Dolores, VITALITY: 50 { Type: Wizard, Mana: 50, Intelligence: 45}
 
 -------------------------------------------------------------------------------------GRAVEYARD-------------------------------------------------------------------------------------
 -Tom-
+-Jerry-
 
 
 
