@@ -16,6 +16,9 @@ public class Game {
     private String options;
     private Battle battle;
 
+    private String idCharacter1;
+    private String idCharacter2;
+
     public Game() {
     }
 
@@ -46,12 +49,32 @@ public class Game {
                 break;
 
             case "battleRound":
+                UtilsGame utilsGame = new UtilsGame();
+
+
+                System.out.println("Choose a valid character from Party1: ");
                 key = new Scanner(System.in).nextLine();
-                while (!key.equals("1") && !key.equals("2") && !key.equals("3") && !key.equals("EXIT") && !key.equals("BACK")) {
-                    printOption();
+                //While the given key is invalid, it will ask again until it fit the size of the character array
+                while (!utilsGame.validCharacter(battle.getParty1().getCharacters(), key) && !key.equals("EXIT") && !key.equals("BACK")) {
+                    System.out.println("Choose a valid character from Party1: ");
                     key = new Scanner(System.in).nextLine();
                 }
-                option = key.equals("EXIT") ? "EXIT" : key.equals("BACK") ? "BACK" : menu + "-options" + key;
+                idCharacter1 = key;
+                if (!key.equals("BACK") && !key.equals("EXIT")){
+                    System.out.println("Choose a valid character from Party2: ");
+                    key = new Scanner(System.in).nextLine();
+                    //While the given key is invalid, it will ask again until it fit the size of the character array
+                    while (!utilsGame.validCharacter(battle.getParty2().getCharacters(), key) && !key.equals("EXIT") && !key.equals("BACK")) {
+                        System.out.println("Choose a valid character from Party2: ");
+                        key = new Scanner(System.in).nextLine();
+                    }
+                    if (!key.equals("BACK") && !key.equals("EXIT")){
+                        idCharacter2 = key;
+                        //Sending the characters at the id less 1 to get the exact position in array of those characters
+                        battle.battleRound(battle.getParty1().getCharacters().get(Integer.parseInt(idCharacter1)- 1), battle.getParty2().getCharacters().get(Integer.parseInt(idCharacter2)- 1));
+                    }
+                }
+                option = key.equals("EXIT") ? "EXIT" : key.equals("BACK") ? "BACK" : menu + "";
                 break;
         }
         return option;

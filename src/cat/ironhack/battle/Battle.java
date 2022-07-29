@@ -2,6 +2,7 @@ package cat.ironhack.battle;
 
 import cat.ironhack.character.Character;
 import cat.ironhack.party.Party;
+import cat.ironhack.utils.UtilsRandom;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -19,9 +20,24 @@ public class Battle {
     }
 
     //String to show character winner
-    public String battleRound(Character character1,Character character2) {
-        //TODO
-        return null;
+    public void battleRound(Character character1, Character character2) {
+        System.out.println(character1.getName() + " VS " + character2.getName());
+        System.out.println("Class1 :" + character1.getClass().getName());
+        System.out.println("****** " + character1.getName() + " VS " + character2.getName() + " ******");
+
+        while (character1.isAlive() && character2.isAlive()) {
+            character1.attackEnemy(character2);
+            character2.attackEnemy(character1);
+        }
+        if (character1.isAlive() && !character2.isAlive()) {
+            System.out.println("The WINNER is ******* " + character1.getName() + " ******* CONGRATS!!");
+        } else if (character2.isAlive() && !character1.isAlive()) {
+            System.out.println("The WINNER is ******* " + character2.getName() + " ******* CONGRATS!!");
+        } else {
+            System.out.println("Both players fought bravery until death...");
+            System.out.println("******* IT'S A TIE *******");
+        }
+        incRound();
     }
 
     public ArrayList<Character> getGraveyard() {
@@ -37,7 +53,7 @@ public class Battle {
     }
 
     public void incRound() {
-        this.round = this.round +1;
+        this.round = this.round + 1;
     }
 
     public Party getParty1() {
@@ -58,17 +74,17 @@ public class Battle {
 
     public boolean isBattleOver() {
         boolean isBattleOver = false;
-        if(getWinner()!=null) isBattleOver = true;
+        if (getWinner() != null) isBattleOver = true;
         return isBattleOver;
     }
 
     //return null if there is no winner
     public Party getWinner() {
-        if(this.party1.isPartyDead()){
+        if (this.party1.isPartyDead()) {
             return this.party2;
-        }else if(this.party2.isPartyDead()){
+        } else if (this.party2.isPartyDead()) {
             return this.party1;
-        }else{
+        } else {
             return null;
         }
     }

@@ -51,6 +51,7 @@ public abstract class Character implements Attacker{
         isAlive = alive;
     }
 
+
     @Override
     public String toString() {
         return "Ch4r4ct3r" + "ID" + id + ", NAME" + name + '\'' + ", VITALITY" + hp + ",ALIVEORNOT " + isAlive;
