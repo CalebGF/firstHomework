@@ -27,8 +27,8 @@ public class UtilsMenu {
         fileWriter.write(roundHeader);
         int player1Id = Integer.parseInt(id1);
         int player2Id = Integer.parseInt(id2);
-        Character player1 = battle.getParty1().getAliveCharacters().get(player1Id);//get the players by index received
-        Character player2 = battle.getParty1().getAliveCharacters().get(player2Id);
+        Character player1 = battle.getParty1().getCharacters().get(player1Id-1);//get the players by index received
+        Character player2 = battle.getParty2().getCharacters().get(player2Id-1);
 
         String killed = "====KILLED===>>";
         String dead = "<<===YOU ARE DEAD===>>";
@@ -49,54 +49,51 @@ public class UtilsMenu {
 
     //method to refresh the battle status and show current characters listed by party and dead characters
     public static void refreshBattleTxt(Battle battle) throws IOException {
-        String battleHeader = "\n\n"+"-".repeat(12)+"BATTLE PLAYGROUND"+"-".repeat(12)+"\n";
-        String round = "Round :";
-        String chooseCharacters = "Choose the character that you want to use, and the opponent to attack:\n";
-        String graveyard = "\n"+"-".repeat(61)+"GRAVEYARD"+"-".repeat(61)+"\n";
-
         FileWriter fileWriter = new FileWriter("src/resources/menu/battleRound.txt", false);
-        fileWriter.write(battleHeader);
-        fileWriter.write(round+battle.getRound()+"\n");
-        fileWriter.write(chooseCharacters);
-
-        if(battle.getRound()%2==1) {
-            generateList(fileWriter, battle.getParty1(), battle.getParty2());
-        }else{
-            generateList(fileWriter, battle.getParty2(), battle.getParty1());
-        }
-        fileWriter.write(graveyard);
-        for (int i = 0; i < battle.getGraveyard().size(); i++) {
-            fileWriter.write("-"+battle.getGraveyard().get(i).getName()+"-");
-        }
+        generateList(fileWriter,battle);
         fileWriter.close();
     }
     //method to generate the list of each party's characters
-    private static void generateList(FileWriter fileWriter, Party party1, Party party2) throws IOException {
-        String charactersHeader = "\n"+"-".repeat(23)+"PARTY(1)"+"-".repeat(68)+"PARTY(2)"+"-".repeat(23)+"\n";
+    private static void generateList(FileWriter fileWriter, Battle battle) throws IOException {
+        String charactersHeader = "\n"+"-".repeat(40)+"PARTY(1)"+"-".repeat(100)+"PARTY(2)"+"-".repeat(40)+"\n"; //180 ->90
 
-        fileWriter.write(charactersHeader);
-        for (int i = 0; i < Math.max(party1.getCharacters().size(), party2.getCharacters().size()); i++) {
-            if(party2.getAliveCharacters().size()<i+1){ //getCharacters
-                int index = party1.getIndexFromCharacter(party1.getAliveCharacters().get(i));
-                fileWriter.write((index+1) + "-" + party1.getAliveCharacters().get(i).toString().concat("\n"));
-            }else if(party1.getAliveCharacters().size()<i+1){
-                int index = party2.getIndexFromCharacter(party2.getAliveCharacters().get(i));
-                String str = "                        " +(index+1) +" "+
-                        party2.getAliveCharacters().get(i).toString().concat("\n");
-                fileWriter.write(str);
-            }else{
-                int index = party1.getIndexFromCharacter(party1.getAliveCharacters().get(i));
-                StringBuilder str = new StringBuilder();
-                str.append(index + 1).append(" ").append(party1.getAliveCharacters().get(i).toString());
-                int j = 0;
-                while(j+party1.getAliveCharacters().get(i).getName().length()<22){
-                    str.append(' ');
-                    j++;
+        //fileWriter.write(charactersHeader);
+        StringBuilder sb = new StringBuilder();
+        sb.append(charactersHeader);
+        int j = Math.min(battle.getParty1().getCharacters().size(), battle.getParty2().getCharacters().size());
+        boolean isParty1Min = j==battle.getParty1().getCharacters().size();
+        for (int i = 0; i < Math.max(battle.getParty1().getCharacters().size(), battle.getParty2().getCharacters().size()); i++) {
+            String char1 = "";
+            String char2 = "";
+            if (isParty1Min) { //Party 1 is the minimum
+                if (i <= j - 1) {
+                    if (battle.getParty1().getCharacters().get(i).isAlive())
+                        char1 = (i+1)+"-"+battle.getParty1().getCharacters().get(i).toString();
                 }
-                int index2 = party2.getIndexFromCharacter(party2.getAliveCharacters().get(i));
-                str.append((index2+1)+" "+party2.getAliveCharacters().get(i).toString().concat("\n"));
-                fileWriter.write(str.toString());
+                if (battle.getParty2().getCharacters().get(i).isAlive())
+                    char2 = (i+1)+"-"+battle.getParty2().getCharacters().get(i).toString();
+
+            } else { //Party 2 is the minimum
+                if (battle.getParty1().getCharacters().get(i).isAlive())
+                    char1 = (i+1)+"-"+battle.getParty1().getCharacters().get(i).toString();
+                if (i <= j - 1) {
+                    if (battle.getParty2().getCharacters().get(i).isAlive())
+                        char2 = (i+1)+"-"+battle.getParty1().getCharacters().get(i).toString();
+                }
             }
+            int countSpaces = 180 - (char1.length() + char2.length());
+            if(countSpaces<180) sb.append(char1).append(" ".repeat(countSpaces)).append(char2).append("\n");
         }
+
+        StringBuilder sb2 = new StringBuilder();
+        String graveyard = "\n"+"-".repeat(85)+"GRAVEYARD"+"-".repeat(85)+"\n";
+        sb2.append(graveyard);
+        for (int i = 0; i < battle.getGraveyard().size(); i++) {
+            sb2.append("-").append(battle.getGraveyard().get(i).getName()).append("-\n");
+        }
+        sb2.append("\n\n\n\n");
+        sb.append(sb2);
+        fileWriter.write(sb.toString());
+
     }
 }

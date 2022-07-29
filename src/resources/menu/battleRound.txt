@@ -1,22 +1,15 @@
 
+----------------------------------------PARTY(1)----------------------------------------------------------------------------------------------------PARTY(2)----------------------------------------
+                                                                                                 1-Ch4r4ct3r NAME: Modesto, VITALITY: 100 { Type: Warrior, Strength: 7, Stamina: 30}
+2-Ch4r4ct3r NAME: Jerry, VITALITY: 100 { Type: Wizard, Mana: 30, Intelligence: 25}              2-Ch4r4ct3r NAME: Eulalio, VITALITY: 100 { Type: Wizard, Mana: 30, Intelligence: 25}
+                                                                                                 3-Ch4r4ct3r NAME: Gregoria, VITALITY: 80 { Type: Warrior, Strength: 9, Stamina: 40}
+                                                                                                  4-Ch4r4ct3r NAME: Tomasa, VITALITY: 49 { Type: Wizard, Mana: 30, Intelligence: 35}
+                                                                                                  5-Ch4r4ct3r NAME: Fresina, VITALITY: 70 { Type: Warrior, Strength: 6, Stamina: 50}
+                                                                                                 6-Ch4r4ct3r NAME: Dolores, VITALITY: 50 { Type: Wizard, Mana: 50, Intelligence: 45}
 
-------------BATTLE PLAYGROUND------------
-Round :1
-Choose the character that you want to use, and the opponent to attack:
+-------------------------------------------------------------------------------------GRAVEYARD-------------------------------------------------------------------------------------
+-Tom-
 
-PARTY(1)----------------PARTY(2)
-1 Baker                 1 Frank
-2 Evans                 2 Clark
-                        3 Evans
-                        4 Evans Jr
-                        5 Adams
-                        6 Davis
-                        7 Davis Jr
-                        8 Evans Jr
-                        9 Frank Jr
-                        10 Evans Jr
-                        11 Davis Jr
-                        12 Clark Jr
-                        13 Clark Jr
-                        14 Clark Jr
-------------GRAVEYARD------------
+
+
+

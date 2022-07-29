@@ -26,7 +26,7 @@ public class Main {
         game.showOptions(option);
 
         boolean battleIsOver = game.getBattle().isBattleOver();
-        System.out.println("ssdsa"+ battleIsOver);
+
         //show fight results and user can choose EXIT or CONTINUE
         String optionRoundScreen = "";
         //Repeat showing battleRound and roundScreenMenu until battle is over

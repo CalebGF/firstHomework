@@ -23,7 +23,10 @@ public class Game {
     }
 
     public String showMenu(String menu) throws IOException {
-        if (battle !=null) refreshBattleTxt(battle);
+        if (battle !=null) {
+            refreshBattleTxt(battle);
+            if (idCharacter1!=null && idCharacter2!=null) roundMenu(battle,idCharacter1,idCharacter2);
+        }
         String option = "";
         setText(readMenu(menu));
         printMenu();

@@ -22,7 +22,7 @@ public class Battle {
     //String to show character winner
     public void battleRound(Character character1, Character character2) {
         System.out.println(character1.getName() + " VS " + character2.getName());
-        System.out.println("Class1 :" + character1.getClass().getName());
+        System.out.println("Class1 :" + character1.getClass().getName().substring(23));
         System.out.println("****** " + character1.getName() + " VS " + character2.getName() + " ******");
 
         while (character1.isAlive() && character2.isAlive()) {
@@ -30,12 +30,16 @@ public class Battle {
             character2.attackEnemy(character1);
         }
         if (character1.isAlive() && !character2.isAlive()) {
-            System.out.println("The WINNER is ******* " + character1.getName() + " ******* CONGRATS!!");
+            //System.out.println("The WINNER is ******* " + character1.getName() + " ******* CONGRATS!!");
+            graveyard.add(character2);
         } else if (character2.isAlive() && !character1.isAlive()) {
-            System.out.println("The WINNER is ******* " + character2.getName() + " ******* CONGRATS!!");
+            //System.out.println("The WINNER is ******* " + character2.getName() + " ******* CONGRATS!!");
+            graveyard.add(character1);
         } else {
             System.out.println("Both players fought bravery until death...");
             System.out.println("******* IT'S A TIE *******");
+            graveyard.add(character1);
+            graveyard.add(character2);
         }
         incRound();
     }
