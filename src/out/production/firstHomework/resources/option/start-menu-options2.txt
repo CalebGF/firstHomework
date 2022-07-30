@@ -1,8 +1,0 @@
-Let's create all characters for each team(Party) randomly...
-
-You decided to generate a random party. So, you must know:
-    - You will play with random characters in your party;
-    - The party contains wizards and warriors;
-    - You will receive random special powers due your characters;
-    - The wizards and warriors have a special powers that are defined randomly;
-    - Let´s play!

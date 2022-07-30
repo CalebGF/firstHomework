@@ -1,5 +1,0 @@
-- Type "1" to create manual parties
-- Type "2" to create random parties
-- Type "3" to create parties from CSV
-- Type "BACK" to back to lobby
-- Type "EXIT" to exit game
