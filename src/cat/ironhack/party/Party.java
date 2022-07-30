@@ -49,9 +49,19 @@ public class Party {
         return aliveCharacters;
     }
 
+    public int getIndexFromCharacter(Character character){
+        int index =-1;
+        for (int i= 0; i<characters.size(); i++) {
+            if (characters.get(i).equals(character)) {
+                index =i;
+                break;
+            }
+        }
+        return index;
+    }
+
     public boolean isPartyDead() {
-        //TODO
-        return true;
+        return this.characters.stream().noneMatch(Character::isAlive);
     }
 
     @Override

@@ -16,11 +16,17 @@ public class Game {
     private String options;
     private Battle battle;
 
+    private String idCharacter1;
+    private String idCharacter2;
+
     public Game() {
     }
 
     public String showMenu(String menu) throws IOException {
-        if (battle !=null) refreshBattleTxt(battle);
+        if (battle !=null) {
+            refreshBattleTxt(battle);
+            if (idCharacter1!=null && idCharacter2!=null) roundMenu(battle,idCharacter1,idCharacter2);
+        }
         String option = "";
         setText(readMenu(menu));
         printMenu();
@@ -46,7 +52,41 @@ public class Game {
                 break;
 
             case "battleRound":
-                //TODO
+                UtilsGame utilsGame = new UtilsGame();
+
+
+                System.out.println("Choose a valid character from Party1: ");
+                key = new Scanner(System.in).nextLine();
+                //While the given key is invalid, it will ask again until it fit the size of the character array
+                while (!utilsGame.validCharacter(battle.getParty1().getCharacters(), key) && !key.equals("EXIT") && !key.equals("BACK")) {
+                    System.out.println("Choose a valid character from Party1: ");
+                    key = new Scanner(System.in).nextLine();
+                }
+                idCharacter1 = key;
+                if (!key.equals("BACK") && !key.equals("EXIT")){
+                    System.out.println("Choose a valid character from Party2: ");
+                    key = new Scanner(System.in).nextLine();
+                    //While the given key is invalid, it will ask again until it fit the size of the character array
+                    while (!utilsGame.validCharacter(battle.getParty2().getCharacters(), key) && !key.equals("EXIT") && !key.equals("BACK")) {
+                        System.out.println("Choose a valid character from Party2: ");
+                        key = new Scanner(System.in).nextLine();
+                    }
+                    if (!key.equals("BACK") && !key.equals("EXIT")){
+                        idCharacter2 = key;
+                        //Sending the characters at the id less 1 to get the exact position in array of those characters
+                        battle.battleRound(battle.getParty1().getCharacters().get(Integer.parseInt(idCharacter1)- 1), battle.getParty2().getCharacters().get(Integer.parseInt(idCharacter2)- 1));
+                    }
+                }
+                option = key.equals("EXIT") ? "EXIT" : key.equals("BACK") ? "BACK" : menu + "";
+                break;
+
+            case "roundScreen":
+                key = new Scanner(System.in).nextLine();
+                while (!key.equals("Y") && !key.equals("EXIT") && !key.equals("BACK")) {
+                    printOption();
+                    key = new Scanner(System.in).nextLine();
+                }
+                option = key.equals("EXIT") ? "EXIT" : key.equals("BACK") ? "BACK" : "";
                 break;
         }
         return option;
@@ -106,7 +146,7 @@ public class Game {
     private void printMenu() {
         for (String s : getText().split("\n")) {
             try {
-                Thread.sleep(500);
+                Thread.sleep(300);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -117,7 +157,7 @@ public class Game {
     private void printOption() {
         for (String s : getOptions().split("\n")) {
             try {
-                Thread.sleep(500);
+                Thread.sleep(300);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
