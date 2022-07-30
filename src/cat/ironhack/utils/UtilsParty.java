@@ -82,15 +82,23 @@ public class UtilsParty {
         Scanner reader = new Scanner(System.in);
 
         int i = 1;
-        int numUser;
+        int numUser = 0;
+        String numUserString ="";
+        boolean isValidNumber = false;
         do {
-            System.out.println("Type the size of the party for both teams. You can type min 3 and max 6");
-            numUser = reader.nextInt();
-        } while (numUser < 3 || numUser > 6);
+            System.out.println("Type the size of the party. You can type min 3 and max 6");
+            numUserString = reader.nextLine();
+            try {
+                numUser = Integer.parseInt(numUserString);
+                if(numUser>=3 && numUser<=6) isValidNumber = true;
+            }catch (Exception ignored){
+
+            }
+        } while (!isValidNumber);
 
         //It will ask the user to create up to number introduced by user characters
-        while (i < numUser) {
-            System.out.println("Creating new character " + i + "/"+numbUser);
+        while (i <= numUser) {
+            System.out.println("Creating new character " + i + "/"+numUser);
             String wizardOrWarrior = null;
 
             //ask user to introduce 1 o 2  (wizard o warrior)
