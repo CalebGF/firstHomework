@@ -1,22 +1,16 @@
 
+----------------------------------------PARTY(1)----------------------------------------------------------------------------------------------------PARTY(2)----------------------------------------
+                                                                                                  1-Ch4r4ct3r NAME: Modesto, VITALITY: 68 { Type: Warrior, Strength: 7, Stamina: 20}
+                                                                                                2-Ch4r4ct3r NAME: Eulalio, VITALITY: 100 { Type: Wizard, Mana: 30, Intelligence: 25}
+                                                                                                 3-Ch4r4ct3r NAME: Gregoria, VITALITY: 80 { Type: Warrior, Strength: 9, Stamina: 40}
+                                                                                                  4-Ch4r4ct3r NAME: Tomasa, VITALITY: 70 { Type: Wizard, Mana: 45, Intelligence: 35}
+                                                                                                  5-Ch4r4ct3r NAME: Fresina, VITALITY: 70 { Type: Warrior, Strength: 6, Stamina: 50}
+                                                                                                 6-Ch4r4ct3r NAME: Dolores, VITALITY: 50 { Type: Wizard, Mana: 50, Intelligence: 45}
 
-------------BATTLE PLAYGROUND------------
-Round :1
-Choose the character that you want to use, and the opponent to attack:
+-------------------------------------------------------------------------------------GRAVEYARD-------------------------------------------------------------------------------------
+-Tom-
+-Jerry-
 
-ATTACKERS
-1 Tom
-2 Jerry
-3 Homer
-4 Maggie
-5 Lisa
-6 Bart
 
-DEFENDERS
-1 Modesto
-2 Eulalio
-3 Gregoria
-4 Tomasa
-5 Fresina
-6 Dolores
-------------GRAVEYARD------------
+
+

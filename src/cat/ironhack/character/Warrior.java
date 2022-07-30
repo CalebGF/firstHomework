@@ -40,4 +40,11 @@ public class Warrior extends Character {
         this.strength = strength;
     }
 
+    @Override
+    public String toString() {
+        return super.toString()+" { Type: " + this.getClass().getName().substring(23)+
+                ", Strength: "+ strength+
+                ", Stamina: " + stamina+
+                "}";
+    }
 }

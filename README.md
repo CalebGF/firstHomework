@@ -17,6 +17,7 @@ Also, you will find the commands to type "BACK" to back to lobby and type "EXIT"
 
 After this, you will ready to fight!
 
+
 Specifications:
 
 This game was produce with the program IntelliJ IDEA, with tha Java Back End language.
@@ -24,4 +25,3 @@ This game was produce with the program IntelliJ IDEA, with tha Java Back End lan
 [Library name](https://example.com): Version 1234
 
 This game was created by Carlos Orgobozo, Andrea Molinado, Pau Guarch, Caled González and Aline Scarso in july 2022. 
-
