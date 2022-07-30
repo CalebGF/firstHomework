@@ -12,17 +12,16 @@ Join us and define your party choosing one of this three different ways to defin
 - random;
 - csv project
 
-After this, you will ready to fight!
-
 In menu, you will find the option to creat your parties.
 Also, you will find the commands to type "BACK" to back to lobby and type "EXIT" to exit game.
 
-Now, you can go to start the battle.
+After this, you will ready to fight!
+
 
 Specifications:
 
 This game was produce with the program IntelliJ IDEA, with tha Java Back End language.
-Our code can be reproduced with you have permission.
-[Library name](https://example.com): Version 1234
-This gama was created by Carlos Orgobozo, Andrea Molinado, Pau Guarch, Caled González and Aline Scarso in july 2022. 
 
+[Library name](https://example.com): Version 1234
+
+This game was created by Carlos Orgobozo, Andrea Molinado, Pau Guarch, Caled González and Aline Scarso in july 2022. 
