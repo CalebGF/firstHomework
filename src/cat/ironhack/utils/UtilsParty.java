@@ -7,6 +7,7 @@ import cat.ironhack.character.Warrior;
 import cat.ironhack.character.Wizard;
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -75,19 +76,25 @@ public class UtilsParty {
     public static Party generatePartyManual(String team) {
         Party party = null;
         characters = new ArrayList<>();
-        System.out.println("Generating "+team);
+        System.out.println("Generating " + team);
         Scanner scanner = new Scanner(System.in);
-        int i =1;
+        Scanner reader = new Scanner(System.in);
+        int i = 1;
+        int numUser;
+        do {
+            numUser = reader.nextInt();
+        } while (numUser > 3 && numUser < 6);
+
         //It will ask the user to create up to 3 characters
-        while (i<3) {
-            System.out.println("Creating new character "+i+"/3");
+        while (i < numUser) {
+            System.out.println("Creating new character " + i + "/3");
             String wizardOrWarrior = null;
 
             //ask user to introduce 1 o 2  (wizard o warrior)
             System.out.println("Type '1' To create Wizard\nType '2' To create Warrior");
             wizardOrWarrior = scanner.nextLine();
             //Handling user did not introduce 1 or 2
-            while(!(wizardOrWarrior.equals("1")||wizardOrWarrior.equals("2"))) {
+            while (!(wizardOrWarrior.equals("1") || wizardOrWarrior.equals("2"))) {
                 System.out.println("Type '1' To create Wizard\nType '2' To create Warrior");
                 wizardOrWarrior = scanner.nextLine();
             }
@@ -99,13 +106,13 @@ public class UtilsParty {
             int hp;
 
             //Wizard case
-            if(wizardOrWarrior.equals("1")) {
+            if (wizardOrWarrior.equals("1")) {
                 //50-100
                 //ask user to introduce hp
                 System.out.println("Introduce character's hp between 50 and 100");
                 hp = Integer.parseInt(scanner.nextLine());
                 //Handling user did not introduce a valid hp
-                while(!(hp>=50 && hp<=100)) {
+                while (!(hp >= 50 && hp <= 100)) {
                     System.out.println("Introduce character's hp between 50 and 100");
                     hp = Integer.parseInt(scanner.nextLine());
                 }
@@ -115,7 +122,7 @@ public class UtilsParty {
                 //ask user to introduce mana
                 int mana = Integer.parseInt(scanner.nextLine());
                 //Handling user did not introduce a valid mana
-                while(!(mana>=10 && mana<=50)) {
+                while (!(mana >= 10 && mana <= 50)) {
                     System.out.println("Introduce wizard's mana between 10 and 50");
                     mana = Integer.parseInt(scanner.nextLine());
                 }
@@ -125,13 +132,13 @@ public class UtilsParty {
                 //ask user to introduce intelligence
                 int intelligence = Integer.parseInt(scanner.nextLine());
                 //Handling user did not introduce a valid intelligence
-                while(!(intelligence>=1 && intelligence<=50)) {
+                while (!(intelligence >= 1 && intelligence <= 50)) {
                     System.out.println("Introduce wizard's intelligence between 1 and 50");
                     intelligence = Integer.parseInt(scanner.nextLine());
                 }
 
                 // added new chars to local variable characters
-                characters.add(new Wizard(name,hp,true,mana,intelligence));
+                characters.add(new Wizard(name, hp, true, mana, intelligence));
 
 
             } else {
@@ -141,7 +148,7 @@ public class UtilsParty {
                 hp = Integer.parseInt(scanner.nextLine());
 
                 //Handling user did not introduce a valid hp
-                while(!(hp>=100 && hp<=200)) {
+                while (!(hp >= 100 && hp <= 200)) {
                     System.out.println("Introduce character's hp between 100 and 200");
                     hp = Integer.parseInt(scanner.nextLine());
                 }
@@ -153,7 +160,7 @@ public class UtilsParty {
                 int stamina = Integer.parseInt(scanner.nextLine());
 
                 //Handling user did not introduce a valid stamina
-                while(!(stamina>=10 && stamina<=50)) {
+                while (!(stamina >= 10 && stamina <= 50)) {
                     System.out.println("Introduce warrior's stamina between 10 and 50");
                     stamina = Integer.parseInt(scanner.nextLine());
                 }
@@ -163,12 +170,12 @@ public class UtilsParty {
                 //1-10
                 int strength = Integer.parseInt(scanner.nextLine());
                 //Handling user did not introduce a valid strength
-                while(!(strength>=1 && strength<=10)) {
+                while (!(strength >= 1 && strength <= 10)) {
                     System.out.println("Introduce warrior's strength between 1 and 10");
                     strength = Integer.parseInt(scanner.nextLine());
                 }
                 // added new chars to local variable characters
-                characters.add(new Warrior(name,hp,true,stamina,strength));
+                characters.add(new Warrior(name, hp, true, stamina, strength));
             }
             System.out.println("New character added");
             i++;
