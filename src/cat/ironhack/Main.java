@@ -59,6 +59,7 @@ public class Main {
             battleIsOver = game.getBattle().isBattleOver();
 
         }
+        System.out.println("GAME OVER");
 
 
     }

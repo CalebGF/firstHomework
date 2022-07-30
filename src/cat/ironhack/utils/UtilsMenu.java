@@ -55,9 +55,7 @@ public class UtilsMenu {
     }
     //method to generate the list of each party's characters
     private static void generateList(FileWriter fileWriter, Battle battle) throws IOException {
-        String charactersHeader = "\n"+"-".repeat(40)+"PARTY(1)"+"-".repeat(100)+"PARTY(2)"+"-".repeat(40)+"\n"; //180 ->90
-
-        //fileWriter.write(charactersHeader);
+        String charactersHeader = "\n"+"-".repeat(40)+"PARTY(1)"+"-".repeat(84)+"PARTY(2)"+"-".repeat(40)+"\n"; //180 ->90
         StringBuilder sb = new StringBuilder();
         sb.append(charactersHeader);
         int j = Math.min(battle.getParty1().getCharacters().size(), battle.getParty2().getCharacters().size());
@@ -78,7 +76,7 @@ public class UtilsMenu {
                     char1 = (i+1)+"-"+battle.getParty1().getCharacters().get(i).toString();
                 if (i <= j - 1) {
                     if (battle.getParty2().getCharacters().get(i).isAlive())
-                        char2 = (i+1)+"-"+battle.getParty1().getCharacters().get(i).toString();
+                        char2 = (i+1)+"-"+battle.getParty2().getCharacters().get(i).toString();
                 }
             }
             int countSpaces = 180 - (char1.length() + char2.length());
@@ -86,7 +84,7 @@ public class UtilsMenu {
         }
 
         StringBuilder sb2 = new StringBuilder();
-        String graveyard = "\n"+"-".repeat(85)+"GRAVEYARD"+"-".repeat(85)+"\n";
+        String graveyard = "\n"+"-".repeat(85)+"GRAVEYARD"+"-".repeat(86)+"\n";
         sb2.append(graveyard);
         for (int i = 0; i < battle.getGraveyard().size(); i++) {
             sb2.append("-").append(battle.getGraveyard().get(i).getName()).append("-\n");

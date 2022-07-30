@@ -31,13 +31,17 @@ public class Battle {
         }
         if (character1.isAlive() && !character2.isAlive()) {
             //System.out.println("The WINNER is ******* " + character1.getName() + " ******* CONGRATS!!");
+            character2.setAlive(false);
             graveyard.add(character2);
         } else if (character2.isAlive() && !character1.isAlive()) {
             //System.out.println("The WINNER is ******* " + character2.getName() + " ******* CONGRATS!!");
             graveyard.add(character1);
+            character1.setAlive(false);
         } else {
             System.out.println("Both players fought bravery until death...");
             System.out.println("******* IT'S A TIE *******");
+            character1.setAlive(false);
+            character2.setAlive(false);
             graveyard.add(character1);
             graveyard.add(character2);
         }
