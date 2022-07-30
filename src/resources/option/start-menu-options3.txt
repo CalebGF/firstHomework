@@ -1,0 +1,10 @@
+Let's create all characters for each team(Party) from CSV
+
+You decided to generate a CSV party. So, you must know:
+    - You will play with random characters in your party;
+    - The party contains wizards and warriors;
+    - You will receive random special powers conform your characters;
+    - The wizards and warriors have a special powers that are defined randomly;
+    - You can save the game and access it whenever you want!
+    - Let´s fight!
+

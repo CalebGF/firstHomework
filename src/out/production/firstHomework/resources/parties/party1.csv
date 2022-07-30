@@ -1,0 +1,7 @@
+type,name,hp,isAlive,mana-stamina,intelligence-strength
+warrior,Tom,100,true,40,7
+wizard,Jerry,100,true,30,25
+warrior,Homer,80,true,30,9
+wizard,Maggie,70,true,45,35
+warrior,Lisa,70,true,50,6
+wizard,Bart,50,true,50,45
