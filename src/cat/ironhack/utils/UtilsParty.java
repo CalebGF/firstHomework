@@ -79,11 +79,13 @@ public class UtilsParty {
         System.out.println("Generating " + team);
         Scanner scanner = new Scanner(System.in);
         Scanner reader = new Scanner(System.in);
+
         int i = 1;
         int numUser;
         do {
+            System.out.println("Type the size of the party for both teams. You can type min 3 and max 6");
             numUser = reader.nextInt();
-        } while (numUser > 3 && numUser < 6);
+        } while (numUser < 3 || numUser > 6);
 
         //It will ask the user to create up to 3 characters
         while (i < numUser) {
