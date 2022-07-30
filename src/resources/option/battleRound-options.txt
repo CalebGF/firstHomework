@@ -1,0 +1,11 @@
+Hello, fighter!
+
+Are you ready for the century´s battle?
+
+Each party has warriorS and wizards with yours special powers.
+
+Choose a valid player - warrior or wizards - to fight each other.
+
+You can type BACK to return to Menu Options or type EXIT to exit the play.
+
+Go!
