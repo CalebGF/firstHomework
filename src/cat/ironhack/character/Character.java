@@ -14,14 +14,15 @@ public abstract class Character implements Attacker{
         this.name = name;
         this.hp = hp;
         this.isAlive = isAlive;
+        setId();
     }
 
     public UUID getId() {
         return id;
     }
 
-    private void setId(UUID id) {
-        this.id = id;
+    private void setId() {
+        this.id = UUID.randomUUID();
     }
 
     public String getName() {
